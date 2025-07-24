@@ -221,7 +221,7 @@ export const ALL_MODELS: LLMModel[] = [
     calculateTokens: claudeTokenCalc,
     features: ['Batch: 50% Rabatt', 'Cache Write: $3.75', 'Cache Read: $0.30'],
     color: 'purple',
-    realChatLimit: 160000 // TODO: Test with generated files
+    realChatLimit: 159000 // Real tested: 605K chars works, 610K fails = ~159K tokens in Claude.ai
   },
   {
     id: 'claude-3.5-haiku',
