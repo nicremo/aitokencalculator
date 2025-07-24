@@ -49,7 +49,7 @@ export const ALL_MODELS: LLMModel[] = [
     calculateTokens: defaultTokenCalc,
     features: ['Multimodal', '2M Kontext', 'Preis >200k: $2.50/$15.00'],
     color: 'emerald',
-    realChatLimit: 800000 // TODO: Test with generated files
+    realChatLimit: 187500 // Google specs: 750K words ≈ 3M chars ≈ 750K tokens (4 chars/token)
   },
   {
     id: 'gemini-2.5-flash',
@@ -64,7 +64,8 @@ export const ALL_MODELS: LLMModel[] = [
     pricing: { input: 0.30, output: 2.50 },
     calculateTokens: defaultTokenCalc,
     features: ['Schnell', 'Audio: $1.00/MTok Input'],
-    color: 'emerald'
+    color: 'emerald',
+    realChatLimit: 187500 // Same Gemini chat interface limit
   },
   {
     id: 'gemini-2.5-flash-lite',
@@ -79,7 +80,8 @@ export const ALL_MODELS: LLMModel[] = [
     pricing: { input: 0.10, output: 0.40 },
     calculateTokens: defaultTokenCalc,
     features: ['Sehr günstig', 'Audio: $0.30/MTok'],
-    color: 'emerald'
+    color: 'emerald',
+    realChatLimit: 187500 // Same Gemini chat interface limit
   },
 
   // OpenAI Models
