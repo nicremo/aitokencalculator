@@ -24,7 +24,7 @@ export interface LLMModel {
 
 // Token calculation functions
 const defaultTokenCalc = (text: string) => Math.ceil(text.length / 4);
-const claudeTokenCalc = (text: string) => Math.ceil(text.length / 3.5);
+const claudeTokenCalc = (text: string) => Math.ceil(text.length / 3.8);
 const llamaTokenCalc = (text: string) => Math.ceil(text.length / 3.8);
 const cohereTokenCalc = (text: string) => {
   // Cohere: 1 word ≈ 2-3 tokens
