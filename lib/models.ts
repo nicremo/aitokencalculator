@@ -20,6 +20,7 @@ export interface LLMModel {
   calculateTokens: (text: string) => number;
   features?: string[];
   color?: string; // For UI theming
+  realChatLimit?: number; // Real chat input limit (tokens) - to be tested
 }
 
 // Token calculation functions
@@ -47,7 +48,8 @@ export const ALL_MODELS: LLMModel[] = [
     pricing: { input: 1.25, output: 10.0 }, // Preis für ≤200k Token
     calculateTokens: defaultTokenCalc,
     features: ['Multimodal', '2M Kontext', 'Preis >200k: $2.50/$15.00'],
-    color: 'emerald'
+    color: 'emerald',
+    realChatLimit: 800000 // TODO: Test with generated files
   },
   {
     id: 'gemini-2.5-flash',
@@ -94,7 +96,8 @@ export const ALL_MODELS: LLMModel[] = [
     pricing: { input: 2.5, output: 10.0 },
     calculateTokens: defaultTokenCalc,
     features: ['Multimodal', 'Cached Input: $1.25/MTok'],
-    color: 'blue'
+    color: 'blue',
+    realChatLimit: 100000 // TODO: Test with generated files - likely lower than context window
   },
   {
     id: 'gpt-4-turbo',
@@ -217,7 +220,8 @@ export const ALL_MODELS: LLMModel[] = [
     pricing: { input: 3.0, output: 15.0 },
     calculateTokens: claudeTokenCalc,
     features: ['Batch: 50% Rabatt', 'Cache Write: $3.75', 'Cache Read: $0.30'],
-    color: 'purple'
+    color: 'purple',
+    realChatLimit: 160000 // TODO: Test with generated files
   },
   {
     id: 'claude-3.5-haiku',

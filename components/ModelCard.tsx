@@ -83,6 +83,9 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
           {formatNumber(tokenCount.tokens)}
         </p>
         <p className="text-xs text-gray-500 uppercase tracking-wide">Tokens</p>
+        <p className="text-xs text-gray-400 italic mt-1">
+          ~${cost.toFixed(4)} API-Kosten
+        </p>
       </div>
       
       {/* Progress Bar */}
