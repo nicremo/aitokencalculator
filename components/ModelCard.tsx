@@ -1,0 +1,149 @@
+'use client';
+
+import React, { useState } from 'react';
+import { ChevronDown, ChevronUp, Info } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { TokenCount, formatNumber, estimateApiCost } from '@/lib/tokenCalculator';
+import { LLMModel } from '@/lib/models';
+// Removed translations for now
+
+interface ModelCardProps {
+  model: LLMModel;
+  tokenCount: TokenCount;
+}
+
+export function ModelCard({ model, tokenCount }: ModelCardProps) {
+  // Removed translations for now
+  const [showDetails, setShowDetails] = useState(false);
+  
+  const getColorClasses = (color: string, status: string) => {
+    // Provider accent colors for the card top border
+    const providerColors: Record<string, string> = {
+      emerald: 'border-t-emerald-500',
+      blue: 'border-t-blue-500',
+      purple: 'border-t-purple-500',
+      sky: 'border-t-sky-500',
+      orange: 'border-t-orange-500',
+      teal: 'border-t-teal-500',
+      amber: 'border-t-amber-500',
+      indigo: 'border-t-indigo-500'
+    };
+    
+    const statusColors = {
+      fits: {
+        bg: 'bg-white',
+        border: 'border-gray-200',
+        text: 'text-gray-600',
+        progress: 'bg-gray-400',
+        progressBg: 'bg-gray-100'
+      },
+      tight: {
+        bg: 'bg-white',
+        border: 'border-gray-200',
+        text: 'text-amber-600',
+        progress: 'bg-amber-400',
+        progressBg: 'bg-gray-100'
+      },
+      exceeds: {
+        bg: 'bg-white',
+        border: 'border-gray-200',
+        text: 'text-red-500',
+        progress: 'bg-red-400',
+        progressBg: 'bg-gray-100'
+      }
+    };
+    
+    return statusColors[status as keyof typeof statusColors] || statusColors.fits;
+  };
+  
+  const colors = getColorClasses(model.color || 'blue', tokenCount.status);
+  const cost = estimateApiCost(tokenCount.tokens, model);
+  
+  return (
+    <div className={cn(
+      "rounded-lg border border-gray-200 p-6 transition-all duration-200 hover:shadow-sm hover:border-gray-300",
+      "bg-white"
+    )}>
+      {/* Header */}
+      <div className="flex justify-between items-start mb-5">
+        <div>
+          <h3 className="text-lg font-medium text-gray-900">{model.name}</h3>
+          <p className="text-sm text-gray-500">{model.provider}</p>
+        </div>
+        <div className="flex items-center gap-1">
+          <span className={cn("text-lg font-medium", colors.text)}>
+            {tokenCount.percentage > 100 ? '>100' : tokenCount.percentage.toFixed(0)}%
+          </span>
+        </div>
+      </div>
+      
+      {/* Token Count */}
+      <div className="mb-4">
+        <p className="text-2xl font-semibold text-gray-900">
+          {formatNumber(tokenCount.tokens)}
+        </p>
+        <p className="text-xs text-gray-500 uppercase tracking-wide">Tokens</p>
+      </div>
+      
+      {/* Progress Bar */}
+      <div className="mb-5">
+        <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+          <div 
+            className={cn("h-full transition-all duration-700 ease-out", colors.progress)}
+            style={{ width: `${Math.min(tokenCount.percentage, 100)}%` }}
+          />
+        </div>
+      </div>
+      
+      {/* Status Message */}
+      <p className={cn("text-sm font-medium mb-5", colors.text)}>
+        {tokenCount.status === 'fits' && 'Ausreichend Platz verfügbar'}
+        {tokenCount.status === 'tight' && tokenCount.percentage <= 85 && 'Wird etwas knapp'}
+        {tokenCount.status === 'tight' && tokenCount.percentage > 85 && 'Sehr knapp, fast am Limit'}
+        {tokenCount.status === 'exceeds' && `Überschreitet um ${formatNumber(tokenCount.overflow || 0)} Tokens`}
+      </p>
+      
+      {/* Details Toggle */}
+      <button
+        onClick={() => setShowDetails(!showDetails)}
+        className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-700 transition-colors duration-150"
+      >
+        <Info className="h-3 w-3" />
+        <span>Details</span>
+        <div className="transition-transform duration-200">
+          {showDetails ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
+        </div>
+      </button>
+      
+      {/* Expanded Details */}
+      <div className={cn(
+        "overflow-hidden transition-all duration-300 ease-out",
+        showDetails ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
+      )}>
+        <div className="pt-4 border-t border-gray-50 space-y-2">
+          <div className="flex justify-between text-xs">
+            <span className="text-gray-500">Kontext:</span>
+            <span className="font-medium text-gray-700">{formatNumber(model.contextWindow)}</span>
+          </div>
+          <div className="flex justify-between text-xs">
+            <span className="text-gray-500">Max Output:</span>
+            <span className="font-medium text-gray-700">{formatNumber(model.maxOutput)}</span>
+          </div>
+          <div className="flex justify-between text-xs">
+            <span className="text-gray-500">Verfügbar:</span>
+            <span className="font-medium text-gray-700">
+              {formatNumber(model.contextWindow - tokenCount.tokens)}
+            </span>
+          </div>
+          <div className="flex justify-between text-xs">
+            <span className="text-gray-500">Kosten:</span>
+            <span className="font-medium text-gray-700">${cost.toFixed(4)}</span>
+          </div>
+          <div className="text-xs text-gray-500 mt-3 pt-2 border-t border-gray-50">
+            {model.description}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

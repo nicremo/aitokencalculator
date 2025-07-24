@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "title": "AI Token Rechner - Tokens zählen für ChatGPT, Claude & Gemini",
+    "description": "Kostenloser Online Token-Rechner für KI-Modelle. Prüfe ob dein Text in GPT-4, Claude, Gemini Kontextfenster passt. API-Kosten sofort berechnen.",
+    "keywords": "Token Rechner, KI Token Zähler, ChatGPT Tokens, Claude Tokens, Gemini Tokens, LLM Token Kalkulator, API Kosten Rechner"
+  },
+  "header": {
+    "title": "AI Token Calculator",
+    "subtitle": "Analysiere deine Texte für KI-Modelle",
+    "languageSelector": "Sprache"
+  },
+  "tabs": {
+    "text": "Text",
+    "files": "Dateien"
+  },
+  "input": {
+    "placeholder": "Füge hier deinen Text ein...",
+    "stats": {
+      "characters": "Zeichen",
+      "words": "Wörter",
+      "tokens": "Tokens"
+    }
+  },
+  "fileUpload": {
+    "title": "Dateien hier ablegen oder klicken zum Hochladen",
+    "subtitle": "Unterstützt TXT, MD, PDF, DOCX und Bilder",
+    "processing": "Verarbeite...",
+    "error": "Fehler beim Verarbeiten der Datei"
+  },
+  "modelLibrary": {
+    "title": "Modell-Bibliothek",
+    "selectPrompt": "Wähle die KI-Modelle aus, die du vergleichen möchtest:",
+    "button": "Modelle auswählen",
+    "activeCount": "{count} aktiv",
+    "search": "Modell suchen...",
+    "filters": {
+      "allProviders": "Alle Anbieter",
+      "allTypes": "Alle Typen",
+      "proprietary": "Proprietär",
+      "openSource": "Open Source"
+    },
+    "showDeprecated": "Veraltete Modelle anzeigen",
+    "noResults": "Keine Modelle gefunden",
+    "noResultsHint": "Versuche deine Suchkriterien anzupassen",
+    "resetDefaults": "Standard wiederherstellen",
+    "selectedCount": "{count} Modelle ausgewählt",
+    "done": "Fertig",
+    "active": "aktiv",
+    "deprecated": "veraltet"
+  },
+  "modelCard": {
+    "tokens": "Tokens",
+    "details": "Details",
+    "contextWindow": "Kontextfenster",
+    "maxOutput": "Max. Output",
+    "available": "Verfügbar",
+    "estimatedCost": "Geschätzte Kosten"
+  },
+  "results": {
+    "customize": "Modelle anpassen",
+    "export": "Als CSV exportieren",
+    "comparison": "Vergleichstabelle",
+    "headers": {
+      "model": "Modell",
+      "yourTokens": "Ihre Tokens",
+      "contextWindow": "Kontextfenster",
+      "status": "Status",
+      "cost": "Kosten*"
+    },
+    "status": {
+      "fits": "✅ Passt",
+      "tight": "⚠️ Knapp",
+      "exceeds": "❌ Zu groß"
+    },
+    "costNote": "* Geschätzte API-Kosten basierend auf öffentlichen Preisen (nur Input-Tokens)"
+  },
+  "info": {
+    "title": "Was sind Tokens?",
+    "description": "Sprachmodelle wie Gemini oder ChatGPT lesen keine Wörter, sondern \"Tokens\". Ein Token ist oft nur ein Teil eines Wortes. Die genaue Umrechnung ist von Modell zu Modell unterschiedlich. Dieser Rechner gibt dir eine Schätzung für die bekanntesten Modelle.",
+    "rules": {
+      "title": "Faustregel",
+      "token": "1 Token ≈ 4 Zeichen",
+      "words": "100 Tokens ≈ 75 Wörter"
+    },
+    "languages": {
+      "title": "Deutscher Text",
+      "description": "Benötigt ~15% mehr Tokens",
+      "note": "wegen längerer Wörter"
+    },
+    "multimodal": {
+      "title": "Multimodal",
+      "images": "Bilder: ~200-800 Tokens",
+      "audio": "Audio: ~32 Tokens/Sekunde"
+    }
+  },
+  "status": {
+    "fits": "✅ Problemlos! Viel Platz verfügbar.",
+    "tight": "⚠️ Passt noch, aber wird knapp.",
+    "veryTight": "⚠️ Sehr knapp! Fast am Limit.",
+    "exceeds": "❌ Zu groß! Überschreitet um {count} Tokens."
+  },
+  "providers": {
+    "Google": "Google",
+    "OpenAI": "OpenAI",
+    "Anthropic": "Anthropic",
+    "Meta": "Meta",
+    "Mistral AI": "Mistral AI",
+    "Cohere": "Cohere",
+    "AI21": "AI21",
+    "Amazon": "Amazon",
+    "Hugging Face": "Hugging Face",
+    "Aleph Alpha": "Aleph Alpha"
+  }
+}

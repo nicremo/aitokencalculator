@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "title": "AI Token Calculator - Count Tokens for ChatGPT, Claude & Gemini",
+    "description": "Free online token calculator for AI models. Check if your text fits in GPT-4, Claude, Gemini context windows. Estimate API costs instantly.",
+    "keywords": "token calculator, AI token counter, ChatGPT tokens, Claude tokens, Gemini tokens, LLM token calculator, API cost calculator"
+  },
+  "header": {
+    "title": "AI Token Calculator",
+    "subtitle": "Analyze your texts for AI models",
+    "languageSelector": "Language"
+  },
+  "tabs": {
+    "text": "Text",
+    "files": "Files"
+  },
+  "input": {
+    "placeholder": "Paste your text here...",
+    "stats": {
+      "characters": "characters",
+      "words": "words",
+      "tokens": "tokens"
+    }
+  },
+  "fileUpload": {
+    "title": "Drop files here or click to upload",
+    "subtitle": "Supports TXT, MD, PDF, DOCX and images",
+    "processing": "Processing...",
+    "error": "Error processing file"
+  },
+  "modelLibrary": {
+    "title": "Model Library",
+    "selectPrompt": "Select the AI models you want to compare:",
+    "button": "Select Models",
+    "activeCount": "{count} active",
+    "search": "Search model...",
+    "filters": {
+      "allProviders": "All Providers",
+      "allTypes": "All Types",
+      "proprietary": "Proprietary",
+      "openSource": "Open Source"
+    },
+    "showDeprecated": "Show deprecated models",
+    "noResults": "No models found",
+    "noResultsHint": "Try adjusting your search criteria",
+    "resetDefaults": "Reset to defaults",
+    "selectedCount": "{count} models selected",
+    "done": "Done",
+    "active": "active",
+    "deprecated": "deprecated"
+  },
+  "modelCard": {
+    "tokens": "Tokens",
+    "details": "Details",
+    "contextWindow": "Context Window",
+    "maxOutput": "Max Output",
+    "available": "Available",
+    "estimatedCost": "Estimated Cost"
+  },
+  "results": {
+    "customize": "Customize Models",
+    "export": "Export as CSV",
+    "comparison": "Comparison Table",
+    "headers": {
+      "model": "Model",
+      "yourTokens": "Your Tokens",
+      "contextWindow": "Context Window",
+      "status": "Status",
+      "cost": "Cost*"
+    },
+    "status": {
+      "fits": "✅ Fits",
+      "tight": "⚠️ Tight",
+      "exceeds": "❌ Too large"
+    },
+    "costNote": "* Estimated API costs based on public prices (input tokens only)"
+  },
+  "info": {
+    "title": "What are tokens?",
+    "description": "Language models like Gemini or ChatGPT don't read words, but \"tokens\". A token is often just part of a word. The exact conversion varies from model to model. This calculator gives you an estimate for the most popular models.",
+    "rules": {
+      "title": "Rule of thumb",
+      "token": "1 token ≈ 4 characters",
+      "words": "100 tokens ≈ 75 words"
+    },
+    "languages": {
+      "title": "English text",
+      "description": "Most efficient tokenization",
+      "note": "baseline for calculations"
+    },
+    "multimodal": {
+      "title": "Multimodal",
+      "images": "Images: ~200-800 tokens",
+      "audio": "Audio: ~32 tokens/second"
+    }
+  },
+  "status": {
+    "fits": "✅ Great! Plenty of space available.",
+    "tight": "⚠️ Still fits, but getting tight.",
+    "veryTight": "⚠️ Very tight! Almost at limit.",
+    "exceeds": "❌ Too large! Exceeds by {count} tokens."
+  },
+  "providers": {
+    "Google": "Google",
+    "OpenAI": "OpenAI",
+    "Anthropic": "Anthropic",
+    "Meta": "Meta",
+    "Mistral AI": "Mistral AI",
+    "Cohere": "Cohere",
+    "AI21": "AI21",
+    "Amazon": "Amazon",
+    "Hugging Face": "Hugging Face",
+    "Aleph Alpha": "Aleph Alpha"
+  }
+}

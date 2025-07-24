@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Token Calculator Pro
 
-## Getting Started
+Ein einfacher und intuitiver Token-Rechner für die beliebtesten KI-Modelle (Gemini 2.5 Pro, GPT-4o, Claude Sonnet 4).
 
-First, run the development server:
+## Features
+
+- 📝 **Text-Eingabe**: Direkte Texteingabe mit Live-Token-Berechnung
+- 📁 **Datei-Upload**: Unterstützung für PDF, DOCX, TXT und Bilder
+- 📊 **Multi-Modell-Vergleich**: Zeigt Token-Anzahl für alle drei großen Modelle
+- 💹 **Visuelle Darstellung**: Fortschrittsbalken zeigen Kontextfenster-Auslastung
+- 💰 **Kosten-Schätzung**: Berechnet geschätzte API-Kosten
+- 📥 **Export-Funktion**: Ergebnisse als CSV exportieren
+- 📱 **Responsive Design**: Funktioniert auf Desktop, Tablet und Mobile
+
+## Installation
 
 ```bash
+# Dependencies installieren
+npm install
+
+# Entwicklungsserver starten
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Öffne [http://localhost:3000](http://localhost:3000) in deinem Browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verwendung
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Text eingeben**: Füge deinen Text in das Textfeld ein oder
+2. **Datei hochladen**: Ziehe eine Datei in den Upload-Bereich
+3. **Ergebnisse ansehen**: Die Token-Anzahl wird automatisch für alle Modelle berechnet
+4. **Exportieren**: Lade die Ergebnisse als CSV herunter
 
-## Learn More
+## Token-Berechnung
 
-To learn more about Next.js, take a look at the following resources:
+Die Berechnung basiert auf folgenden Faustregeln:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Gemini 2.5 Pro**: ~4 Zeichen pro Token, 1M Token Kontextfenster
+- **GPT-4o**: ~4 Zeichen pro Token, 128K Token Kontextfenster
+- **Claude Sonnet 4**: ~3.5 Zeichen pro Token, 200K Token Kontextfenster
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deutscher Text benötigt typischerweise ~15% mehr Tokens als englischer Text.
+
+## Technologie-Stack
+
+- **Next.js 15** - React Framework
+- **TypeScript** - Type Safety
+- **Tailwind CSS** - Styling
+- **Lucide React** - Icons
+- **React Dropzone** - File Upload
+
+## Geplante Features
+
+- [ ] PDF und DOCX Parsing Backend
+- [ ] Präzise Bild-Token-Berechnung
+- [ ] Audio/Video Support
+- [ ] Mehrsprachige Token-Optimierung
+- [ ] Chunk-Splitting für zu große Texte
+- [ ] API-Integration für exakte Token-Zählung
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/token-calculator)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Lizenz
+
+MIT
