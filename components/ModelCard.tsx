@@ -72,7 +72,7 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
         </div>
         <div className="flex items-center gap-1">
           <span className={cn("text-lg font-medium", colors.text)}>
-            {tokenCount.percentage > 100 ? '>100' : tokenCount.percentage.toFixed(0)}%
+            {tokenCount.percentage.toFixed(0)}%
           </span>
         </div>
       </div>
