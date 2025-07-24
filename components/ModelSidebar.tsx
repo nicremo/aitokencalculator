@@ -114,13 +114,14 @@ export function ModelSidebar({
     setExpandedProviders(providersWithActiveModels);
   }, []);
 
-  if (!isOpen) return null;
-
   return (
     <>
       {/* Backdrop */}
       <div 
-        className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 overscroll-contain animate-fadeIn"
+        className={cn(
+          "fixed inset-0 bg-black/20 backdrop-blur-sm z-40 overscroll-contain transition-opacity duration-300",
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        )}
         onClick={onClose}
         onWheel={(e) => e.preventDefault()}
       />
