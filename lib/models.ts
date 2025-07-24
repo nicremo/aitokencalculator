@@ -205,7 +205,8 @@ export const ALL_MODELS: LLMModel[] = [
     pricing: { input: 15.0, output: 75.0 },
     calculateTokens: claudeTokenCalc,
     features: ['Batch: 50% Rabatt', 'Cache Write: $18.75', 'Cache Read: $1.50'],
-    color: 'purple'
+    color: 'purple',
+    realChatLimit: 159000 // Same Claude.ai interface as Sonnet 4
   },
   {
     id: 'claude-4-sonnet',
@@ -236,7 +237,8 @@ export const ALL_MODELS: LLMModel[] = [
     pricing: { input: 0.80, output: 4.0 },
     calculateTokens: claudeTokenCalc,
     features: ['Höchste Geschwindigkeit', 'Cache Read: $0.08'],
-    color: 'purple'
+    color: 'purple',
+    realChatLimit: 159000 // Same Claude.ai interface
   },
   {
     id: 'claude-3-opus',
@@ -251,7 +253,8 @@ export const ALL_MODELS: LLMModel[] = [
     pricing: { input: 15.0, output: 75.0 },
     calculateTokens: claudeTokenCalc,
     features: ['Batch verfügbar', 'Cache: $18.75/$1.50'],
-    color: 'purple'
+    color: 'purple',
+    realChatLimit: 159000 // Same Claude.ai interface
   },
   {
     id: 'claude-3-haiku',
@@ -266,7 +269,8 @@ export const ALL_MODELS: LLMModel[] = [
     pricing: { input: 0.25, output: 1.25 },
     calculateTokens: claudeTokenCalc,
     features: ['Batch: $0.125/$0.625', 'Cache: $0.30/$0.03'],
-    color: 'purple'
+    color: 'purple',
+    realChatLimit: 159000 // Same Claude.ai interface
   },
 
   // Meta Models
