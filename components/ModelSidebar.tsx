@@ -120,7 +120,7 @@ export function ModelSidebar({
     <>
       {/* Backdrop */}
       <div 
-        className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 overscroll-contain"
+        className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 overscroll-contain animate-fadeIn"
         onClick={onClose}
         onWheel={(e) => e.preventDefault()}
       />
@@ -142,9 +142,9 @@ export function ModelSidebar({
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 hover:bg-gray-50 rounded-md transition-colors duration-150"
+            className="p-1.5 hover:bg-gray-50 rounded-md transition-all duration-150 group hover:scale-110"
           >
-            <X className="h-4 w-4 text-gray-400" />
+            <X className="h-4 w-4 text-gray-400 group-hover:text-gray-600 transition-all duration-150 group-hover:rotate-90" />
           </button>
         </div>
 

@@ -131,11 +131,11 @@ export default function TokenCalculatorPage({ params }: Props) {
             </div>
             <button
               onClick={() => setIsSidebarOpen(true)}
-              className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
             >
-              <Settings className="h-4 w-4" />
+              <Settings className="h-4 w-4 transition-transform duration-300 hover:rotate-90" />
               <span>Modelle anpassen</span>
-              <span className="text-xs bg-gray-700 px-2 py-0.5 rounded-full">
+              <span className="text-xs bg-gray-700 px-2 py-0.5 rounded-full transition-all duration-200">
                 {activeModelIds.length} aktiv
               </span>
             </button>
@@ -149,25 +149,25 @@ export default function TokenCalculatorPage({ params }: Props) {
           <button
             onClick={() => setActiveTab('text')}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-all",
+              "flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-all duration-200 transform",
               activeTab === 'text' 
-                ? "bg-white text-gray-900 shadow-sm" 
-                : "text-gray-600 hover:text-gray-900"
+                ? "bg-white text-gray-900 shadow-sm scale-[1.02]" 
+                : "text-gray-600 hover:text-gray-900 hover:scale-[1.01]"
             )}
           >
-            <Type className="h-4 w-4" />
+            <Type className="h-4 w-4 transition-transform duration-200" />
             Text
           </button>
           <button
             onClick={() => setActiveTab('files')}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-all",
+              "flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-all duration-200 transform",
               activeTab === 'files' 
-                ? "bg-white text-gray-900 shadow-sm" 
-                : "text-gray-600 hover:text-gray-900"
+                ? "bg-white text-gray-900 shadow-sm scale-[1.02]" 
+                : "text-gray-600 hover:text-gray-900 hover:scale-[1.01]"
             )}
           >
-            <FileText className="h-4 w-4" />
+            <FileText className="h-4 w-4 transition-transform duration-200" />
             Dateien
           </button>
         </div>
@@ -180,17 +180,21 @@ export default function TokenCalculatorPage({ params }: Props) {
         )}
 
         {/* Input Section */}
-        <div className="mb-8">
+        <div className="mb-8 tab-transition">
           {activeTab === 'text' ? (
-            <TextInput 
-              value={inputText}
-              onChange={setInputText}
-            />
+            <div className="animate-fadeIn">
+              <TextInput 
+                value={inputText}
+                onChange={setInputText}
+              />
+            </div>
           ) : (
-            <FileUpload 
-              onFilesProcessed={handleFileProcessed}
-              onError={handleError}
-            />
+            <div className="animate-fadeIn">
+              <FileUpload 
+                onFilesProcessed={handleFileProcessed}
+                onError={handleError}
+              />
+            </div>
           )}
         </div>
 
@@ -207,9 +211,9 @@ export default function TokenCalculatorPage({ params }: Props) {
               </div>
               <button
                 onClick={exportToCsv}
-                className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all duration-200 hover:scale-[1.02] hover:shadow-sm"
               >
-                <Download className="h-4 w-4" />
+                <Download className="h-4 w-4 transition-transform duration-200 hover:translate-y-0.5" />
                 Als CSV exportieren
               </button>
             </div>
@@ -239,19 +243,19 @@ export default function TokenCalculatorPage({ params }: Props) {
           <p className="text-gray-700 mb-6">Sprachmodelle wie Gemini oder ChatGPT lesen keine Wörter, sondern "Tokens". Ein Token ist oft nur ein Teil eines Wortes. Die genaue Umrechnung ist von Modell zu Modell unterschiedlich. Dieser Rechner gibt dir eine Schätzung für die bekanntesten Modelle.</p>
           
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-blue-50 p-4 rounded-lg">
+            <div className="bg-blue-50 p-4 rounded-lg transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
               <h4 className="font-semibold text-gray-900 mb-2">Faustregel</h4>
               <p className="text-sm text-gray-700">1 Token ≈ 4 Zeichen</p>
               <p className="text-sm text-gray-700">100 Tokens ≈ 75 Wörter</p>
             </div>
             
-            <div className="bg-amber-50 p-4 rounded-lg">
+            <div className="bg-amber-50 p-4 rounded-lg transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
               <h4 className="font-semibold text-gray-900 mb-2">Deutscher Text</h4>
               <p className="text-sm text-gray-700">Benötigt ~15% mehr Tokens</p>
               <p className="text-sm text-gray-600 mt-1">wegen längerer Wörter</p>
             </div>
             
-            <div className="bg-purple-50 p-4 rounded-lg">
+            <div className="bg-purple-50 p-4 rounded-lg transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
               <h4 className="font-semibold text-gray-900 mb-2">Multimodal</h4>
               <p className="text-sm text-gray-700">Bilder: ~200-800 Tokens</p>
               <p className="text-sm text-gray-700">Audio: ~32 Tokens/Sekunde</p>

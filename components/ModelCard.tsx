@@ -61,7 +61,7 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
   
   return (
     <div className={cn(
-      "rounded-lg border border-gray-200 p-6 transition-all duration-200 hover:shadow-sm hover:border-gray-300",
+      "rounded-lg border border-gray-200 p-6 transition-all duration-200 hover:shadow-md hover:border-gray-300 card-hover",
       "bg-white"
     )}>
       {/* Header */}
@@ -98,7 +98,7 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
           </div>
           <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
             <div 
-              className={cn("h-full transition-all duration-700 ease-out", colors.progress)}
+              className={cn("h-full transition-all duration-700 ease-out progress-bar", colors.progress)}
               style={{ width: `${Math.min(tokenCount.percentage, 100)}%` }}
             />
           </div>
@@ -114,7 +114,7 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
             <div className="h-1 bg-gray-50 rounded-full overflow-hidden">
               <div 
                 className={cn(
-                  "h-full transition-all duration-700 ease-out",
+                  "h-full transition-all duration-700 ease-out progress-bar",
                   (tokenCount.tokens / model.realChatLimit) > 1 ? "bg-red-400" : "bg-blue-400"
                 )}
                 style={{ width: `${Math.min((tokenCount.tokens / model.realChatLimit) * 100, 100)}%` }}
@@ -135,7 +135,7 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
       {/* Details Toggle */}
       <button
         onClick={() => setShowDetails(!showDetails)}
-        className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-700 transition-colors duration-150"
+        className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-700 transition-all duration-150 hover:scale-[1.02]"
       >
         <Info className="h-3 w-3" />
         <span>Details</span>

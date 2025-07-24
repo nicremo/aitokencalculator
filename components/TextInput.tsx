@@ -24,11 +24,11 @@ export function TextInput({ value, onChange, placeholder }: TextInputProps) {
       />
       
       {/* Live Statistics */}
-      <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-2.5 rounded-lg border border-gray-100">
+      <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-2.5 rounded-lg border border-gray-100 transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
         <div className="flex items-center gap-4 text-sm text-gray-700 font-medium">
-          <span>Zeichen: {formatNumber(charCount)}</span>
-          <span className="border-l pl-4">Wörter: {formatNumber(wordCount)}</span>
-          <span className="border-l pl-4">~Tokens: {formatNumber(estimatedTokens)}</span>
+          <span className="transition-all duration-200">Zeichen: {formatNumber(charCount)}</span>
+          <span className="border-l pl-4 transition-all duration-200">Wörter: {formatNumber(wordCount)}</span>
+          <span className="border-l pl-4 transition-all duration-200">~Tokens: {formatNumber(estimatedTokens)}</span>
         </div>
       </div>
     </div>

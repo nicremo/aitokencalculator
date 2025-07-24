@@ -61,15 +61,18 @@ export function FileUpload({ onFilesProcessed, onError }: FileUploadProps) {
     <div
       {...getRootProps()}
       className={cn(
-        "border-2 border-dashed rounded-xl p-12 text-center cursor-pointer transition-all",
-        "hover:border-gray-300 hover:bg-gray-50/50",
-        isDragActive && "border-blue-500 bg-blue-50/50"
+        "border-2 border-dashed rounded-xl p-12 text-center cursor-pointer transition-all duration-200",
+        "hover:border-gray-300 hover:bg-gray-50/50 hover:scale-[1.01]",
+        isDragActive && "border-blue-500 bg-blue-50/50 scale-[1.02]"
       )}
     >
       <input {...getInputProps()} />
       
       <div className="flex justify-center mb-6">
-        <Upload className="h-16 w-16 text-gray-300" />
+        <Upload className={cn(
+          "h-16 w-16 text-gray-300 transition-all duration-200",
+          isDragActive && "text-blue-500 scale-110 animate-pulse"
+        )} />
       </div>
       
       {isDragActive ? (
