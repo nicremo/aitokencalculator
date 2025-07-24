@@ -88,14 +88,40 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
         </p>
       </div>
       
-      {/* Progress Bar */}
-      <div className="mb-5">
-        <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-          <div 
-            className={cn("h-full transition-all duration-700 ease-out", colors.progress)}
-            style={{ width: `${Math.min(tokenCount.percentage, 100)}%` }}
-          />
+      {/* Progress Bars */}
+      <div className="mb-5 space-y-2">
+        {/* API Context Window */}
+        <div>
+          <div className="flex justify-between text-xs text-gray-500 mb-1">
+            <span>API Context</span>
+            <span>{tokenCount.percentage.toFixed(0)}%</span>
+          </div>
+          <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+            <div 
+              className={cn("h-full transition-all duration-700 ease-out", colors.progress)}
+              style={{ width: `${Math.min(tokenCount.percentage, 100)}%` }}
+            />
+          </div>
         </div>
+        
+        {/* Real Chat Limit (if available) */}
+        {model.realChatLimit && (
+          <div>
+            <div className="flex justify-between text-xs text-gray-500 mb-1">
+              <span>Chat Limit</span>
+              <span>{((tokenCount.tokens / model.realChatLimit) * 100).toFixed(0)}%</span>
+            </div>
+            <div className="h-1 bg-gray-50 rounded-full overflow-hidden">
+              <div 
+                className={cn(
+                  "h-full transition-all duration-700 ease-out",
+                  (tokenCount.tokens / model.realChatLimit) > 1 ? "bg-red-400" : "bg-blue-400"
+                )}
+                style={{ width: `${Math.min((tokenCount.tokens / model.realChatLimit) * 100, 100)}%` }}
+              />
+            </div>
+          </div>
+        )}
       </div>
       
       {/* Status Message */}

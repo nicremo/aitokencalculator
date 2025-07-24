@@ -97,7 +97,7 @@ export const ALL_MODELS: LLMModel[] = [
     calculateTokens: defaultTokenCalc,
     features: ['Multimodal', 'Cached Input: $1.25/MTok'],
     color: 'blue',
-    realChatLimit: 100000 // TODO: Test with generated files - likely lower than context window
+    realChatLimit: 20000 // Real tested limit: ~80K chars = ~20K tokens in ChatGPT UI
   },
   {
     id: 'gpt-4-turbo',
