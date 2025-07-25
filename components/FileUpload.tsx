@@ -38,7 +38,7 @@ export function FileUpload({ onFilesProcessed, onError }: FileUploadProps) {
     } catch (error) {
       onError(t('fileUpload.errors.processingError', { error: String(error) }));
     }
-  }, [onError, onFilesProcessed]);
+  }, [onError, onFilesProcessed, t]);
 
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
     for (const file of acceptedFiles) {
@@ -98,7 +98,7 @@ export function FileUpload({ onFilesProcessed, onError }: FileUploadProps) {
           <span>{t('fileUpload.types.documents')}</span>
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-600">
-          <Image className="h-5 w-5" aria-hidden="true" />
+          <Image className="h-5 w-5" aria-hidden="true" alt="" />
           <span>{t('fileUpload.types.images')}</span>
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-600">
