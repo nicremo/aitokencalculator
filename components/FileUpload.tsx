@@ -3,8 +3,8 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Upload, FileText, Image, Music } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
-// Removed translations for now
 
 interface FileUploadProps {
   onFilesProcessed: (content: string, fileType: string) => void;
@@ -12,7 +12,7 @@ interface FileUploadProps {
 }
 
 export function FileUpload({ onFilesProcessed, onError }: FileUploadProps) {
-  // Removed translations for now
+  const t = useTranslations();
   
   const processFile = useCallback(async (file: File) => {
     const fileType = file.name.split('.').pop()?.toLowerCase() || '';
@@ -25,18 +25,18 @@ export function FileUpload({ onFilesProcessed, onError }: FileUploadProps) {
       } else if (fileType === 'pdf') {
         // PDF files - we'll need to implement PDF parsing on the server
         // For now, we'll show a message
-        onError('Fehler beim Verarbeiten der Datei: PDF noch nicht unterstützt');
+        onError(t('fileUpload.errors.pdfNotSupported'));
       } else if (fileType === 'docx') {
         // DOCX files - we'll need to implement DOCX parsing on the server
-        onError('Fehler beim Verarbeiten der Datei: DOCX noch nicht unterstützt');
+        onError(t('fileUpload.errors.docxNotSupported'));
       } else if (['jpg', 'jpeg', 'png', 'webp'].includes(fileType)) {
         // Image files
-        onError('Fehler beim Verarbeiten der Datei: Bilder noch nicht unterstützt');
+        onError(t('fileUpload.errors.imagesNotSupported'));
       } else {
-        onError(`Fehler beim Verarbeiten der Datei: .${fileType} nicht unterstützt`);
+        onError(t('fileUpload.errors.fileTypeNotSupported', { fileType }));
       }
     } catch (error) {
-      onError(`Fehler beim Verarbeiten der Datei: ${error}`);
+      onError(t('fileUpload.errors.processingError', { error: String(error) }));
     }
   }, [onError, onFilesProcessed]);
 
@@ -78,16 +78,16 @@ export function FileUpload({ onFilesProcessed, onError }: FileUploadProps) {
       {isDragActive ? (
         <div>
           <p className="text-lg font-medium text-blue-600">
-            Verarbeite...
+            {t('fileUpload.processing')}
           </p>
         </div>
       ) : (
         <div>
           <p className="text-xl font-medium text-gray-800">
-            Dateien hier ablegen oder klicken zum Hochladen
+            {t('fileUpload.title')}
           </p>
           <p className="text-base text-gray-600 mt-3">
-            Unterstützt TXT, MD, PDF, DOCX und Bilder
+            {t('fileUpload.subtitle')}
           </p>
         </div>
       )}
@@ -95,15 +95,15 @@ export function FileUpload({ onFilesProcessed, onError }: FileUploadProps) {
       <div className="flex justify-center gap-6 mt-8">
         <div className="flex items-center gap-2 text-sm text-gray-600">
           <FileText className="h-5 w-5" />
-          <span>Dokumente</span>
+          <span>{t('fileUpload.types.documents')}</span>
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-600">
           <Image className="h-5 w-5" aria-hidden="true" />
-          <span>Bilder</span>
+          <span>{t('fileUpload.types.images')}</span>
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-600">
           <Music className="h-5 w-5" />
-          <span>Audio (bald)</span>
+          <span>{t('fileUpload.types.audio')}</span>
         </div>
       </div>
     </div>

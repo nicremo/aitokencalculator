@@ -25,7 +25,19 @@
     "title": "Dateien hier ablegen oder klicken zum Hochladen",
     "subtitle": "Unterstützt TXT, MD, PDF, DOCX und Bilder",
     "processing": "Verarbeite...",
-    "error": "Fehler beim Verarbeiten der Datei"
+    "error": "Fehler beim Verarbeiten der Datei",
+    "errors": {
+      "pdfNotSupported": "Fehler beim Verarbeiten der Datei: PDF noch nicht unterstützt",
+      "docxNotSupported": "Fehler beim Verarbeiten der Datei: DOCX noch nicht unterstützt",
+      "imagesNotSupported": "Fehler beim Verarbeiten der Datei: Bilder noch nicht unterstützt",
+      "fileTypeNotSupported": "Fehler beim Verarbeiten der Datei: .{fileType} nicht unterstützt",
+      "processingError": "Fehler beim Verarbeiten der Datei: {error}"
+    },
+    "types": {
+      "documents": "Dokumente",
+      "images": "Bilder",
+      "audio": "Audio (bald)"
+    }
   },
   "modelLibrary": {
     "title": "Modell-Bibliothek",
