@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Settings, FileText, Type, Download, BarChart3 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { TextInput } from '@/components/TextInput';
 import { FileUpload } from '@/components/FileUpload';
@@ -17,6 +18,7 @@ interface Props {
 type TabType = 'text' | 'files';
 
 export default function TokenCalculatorPage({}: Props) {
+  const t = useTranslations();
   const [activeTab, setActiveTab] = useState<TabType>('text');
   const [inputText, setInputText] = useState('');
   const [tokenCounts, setTokenCounts] = useState<Record<string, TokenCount>>({});
@@ -126,17 +128,17 @@ export default function TokenCalculatorPage({}: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">AI Token Calculator</h1>
-              <p className="text-lg text-gray-600 mt-1">Analysiere deine Texte für KI-Modelle</p>
+              <h1 className="text-3xl font-bold text-gray-900">{t('header.title')}</h1>
+              <p className="text-lg text-gray-600 mt-1">{t('header.subtitle')}</p>
             </div>
             <button
               onClick={() => setIsSidebarOpen(true)}
               className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
             >
               <Settings className="h-4 w-4 transition-transform duration-300 hover:rotate-90" />
-              <span>Modelle anpassen</span>
+              <span>{t('results.customize')}</span>
               <span className="text-xs bg-gray-700 px-2 py-0.5 rounded-full transition-all duration-200">
-                {activeModelIds.length} aktiv
+                {t('modelLibrary.activeCount', { count: activeModelIds.length })}
               </span>
             </button>
           </div>
@@ -156,7 +158,7 @@ export default function TokenCalculatorPage({}: Props) {
             )}
           >
             <Type className="h-4 w-4 transition-transform duration-200" />
-            Text
+            {t('tabs.text')}
           </button>
           <button
             onClick={() => setActiveTab('files')}
@@ -168,7 +170,7 @@ export default function TokenCalculatorPage({}: Props) {
             )}
           >
             <FileText className="h-4 w-4 transition-transform duration-200" />
-            Dateien
+            {t('tabs.files')}
           </button>
         </div>
 
@@ -206,7 +208,7 @@ export default function TokenCalculatorPage({}: Props) {
               <div className="flex items-center gap-3">
                 <BarChart3 className="h-6 w-6 text-gray-700" />
                 <h2 className="text-2xl font-semibold text-gray-900">
-                  Analyse-Ergebnisse
+                  {t('results.title')}
                 </h2>
               </div>
               <button
@@ -214,7 +216,7 @@ export default function TokenCalculatorPage({}: Props) {
                 className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all duration-200 hover:scale-[1.02] hover:shadow-sm"
               >
                 <Download className="h-4 w-4 transition-transform duration-200 hover:translate-y-0.5" />
-                Als CSV exportieren
+                {t('results.export')}
               </button>
             </div>
 
@@ -239,26 +241,26 @@ export default function TokenCalculatorPage({}: Props) {
 
         {/* Info Section */}
         <div className="bg-white rounded-xl border border-gray-200 p-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">Was sind Tokens?</h3>
-          <p className="text-gray-700 mb-6">Sprachmodelle wie Gemini oder ChatGPT lesen keine Wörter, sondern &quot;Tokens&quot;. Ein Token ist oft nur ein Teil eines Wortes. Die genaue Umrechnung ist von Modell zu Modell unterschiedlich. Dieser Rechner gibt dir eine Schätzung für die bekanntesten Modelle.</p>
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">{t('info.title')}</h3>
+          <p className="text-gray-700 mb-6">{t('info.description')}</p>
           
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-blue-50 p-4 rounded-lg transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
-              <h4 className="font-semibold text-gray-900 mb-2">Faustregel</h4>
-              <p className="text-sm text-gray-700">1 Token ≈ 4 Zeichen</p>
-              <p className="text-sm text-gray-700">100 Tokens ≈ 75 Wörter</p>
+              <h4 className="font-semibold text-gray-900 mb-2">{t('info.rules.title')}</h4>
+              <p className="text-sm text-gray-700">{t('info.rules.token')}</p>
+              <p className="text-sm text-gray-700">{t('info.rules.words')}</p>
             </div>
             
             <div className="bg-amber-50 p-4 rounded-lg transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
-              <h4 className="font-semibold text-gray-900 mb-2">Deutscher Text</h4>
-              <p className="text-sm text-gray-700">Benötigt ~15% mehr Tokens</p>
-              <p className="text-sm text-gray-600 mt-1">wegen längerer Wörter</p>
+              <h4 className="font-semibold text-gray-900 mb-2">{t('info.languages.title')}</h4>
+              <p className="text-sm text-gray-700">{t('info.languages.description')}</p>
+              <p className="text-sm text-gray-600 mt-1">{t('info.languages.note')}</p>
             </div>
             
             <div className="bg-purple-50 p-4 rounded-lg transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
-              <h4 className="font-semibold text-gray-900 mb-2">Multimodal</h4>
-              <p className="text-sm text-gray-700">Bilder: ~200-800 Tokens</p>
-              <p className="text-sm text-gray-700">Audio: ~32 Tokens/Sekunde</p>
+              <h4 className="font-semibold text-gray-900 mb-2">{t('info.multimodal.title')}</h4>
+              <p className="text-sm text-gray-700">{t('info.multimodal.images')}</p>
+              <p className="text-sm text-gray-700">{t('info.multimodal.audio')}</p>
             </div>
           </div>
         </div>

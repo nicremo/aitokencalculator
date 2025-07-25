@@ -57,6 +57,7 @@
     "estimatedCost": "Geschätzte Kosten"
   },
   "results": {
+    "title": "Analyse-Ergebnisse",
     "customize": "Modelle anpassen",
     "export": "Als CSV exportieren",
     "comparison": "Vergleichstabelle",
