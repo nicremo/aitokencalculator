@@ -17,18 +17,6 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
   const [showDetails, setShowDetails] = useState(false);
   
   const getColorClasses = (color: string, status: string) => {
-    // Provider accent colors for the card top border
-    const providerColors: Record<string, string> = {
-      emerald: 'border-t-emerald-500',
-      blue: 'border-t-blue-500',
-      purple: 'border-t-purple-500',
-      sky: 'border-t-sky-500',
-      orange: 'border-t-orange-500',
-      teal: 'border-t-teal-500',
-      amber: 'border-t-amber-500',
-      indigo: 'border-t-indigo-500'
-    };
-    
     const statusColors = {
       fits: {
         bg: 'bg-white',
@@ -146,10 +134,11 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
       
       {/* Expanded Details */}
       <div className={cn(
-        "overflow-hidden transition-all duration-300 ease-out",
-        showDetails ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
+        "grid transition-all duration-300 ease-out",
+        showDetails ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0 mt-0"
       )}>
-        <div className="pt-4 border-t border-gray-50 space-y-2">
+        <div className="overflow-hidden">
+          <div className="pt-4 border-t border-gray-50 space-y-2">
           <div className="flex justify-between text-xs">
             <span className="text-gray-500">Kontext:</span>
             <span className="font-medium text-gray-700">{formatNumber(model.contextWindow)}</span>
@@ -165,12 +154,31 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
             </span>
           </div>
           <div className="flex justify-between text-xs">
-            <span className="text-gray-500">Kosten:</span>
+            <span className="text-gray-500">Geschätzte Kosten:</span>
             <span className="font-medium text-gray-700">${cost.toFixed(4)}</span>
+          </div>
+          <div className="flex justify-between text-xs">
+            <span className="text-gray-500">Preis pro 1M Token:</span>
+            <span className="font-medium text-gray-700">
+              ${model.pricing.input.toFixed(2)} / ${model.pricing.output.toFixed(2)}
+            </span>
           </div>
           <div className="text-xs text-gray-500 mt-3 pt-2 border-t border-gray-50">
             {model.description}
           </div>
+          {model.features && model.features.length > 0 && (
+            <div className="mt-3 pt-2 border-t border-gray-50">
+              <p className="text-xs font-medium text-gray-700 mb-1">Features:</p>
+              <div className="flex flex-wrap gap-1">
+                {model.features.map((feature, idx) => (
+                  <span key={idx} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
         </div>
       </div>
     </div>

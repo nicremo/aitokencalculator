@@ -16,7 +16,7 @@ interface Props {
 
 type TabType = 'text' | 'files';
 
-export default function TokenCalculatorPage({ params }: Props) {
+export default function TokenCalculatorPage({}: Props) {
   const [activeTab, setActiveTab] = useState<TabType>('text');
   const [inputText, setInputText] = useState('');
   const [tokenCounts, setTokenCounts] = useState<Record<string, TokenCount>>({});
@@ -33,7 +33,7 @@ export default function TokenCalculatorPage({ params }: Props) {
         if (Array.isArray(parsed) && parsed.length > 0) {
           setActiveModelIds(parsed);
         }
-      } catch (e) {
+      } catch {
         // Ignore parsing errors, use defaults
       }
     }
@@ -55,7 +55,7 @@ export default function TokenCalculatorPage({ params }: Props) {
     }
   }, [inputText, activeModelIds]);
 
-  const handleFileProcessed = (content: string, fileType: string) => {
+  const handleFileProcessed = (content: string) => {
     setInputText(content);
     setActiveTab('text'); // Switch to text tab to show results
     setError('');
@@ -240,7 +240,7 @@ export default function TokenCalculatorPage({ params }: Props) {
         {/* Info Section */}
         <div className="bg-white rounded-xl border border-gray-200 p-8">
           <h3 className="text-xl font-semibold text-gray-900 mb-4">Was sind Tokens?</h3>
-          <p className="text-gray-700 mb-6">Sprachmodelle wie Gemini oder ChatGPT lesen keine Wörter, sondern "Tokens". Ein Token ist oft nur ein Teil eines Wortes. Die genaue Umrechnung ist von Modell zu Modell unterschiedlich. Dieser Rechner gibt dir eine Schätzung für die bekanntesten Modelle.</p>
+          <p className="text-gray-700 mb-6">Sprachmodelle wie Gemini oder ChatGPT lesen keine Wörter, sondern &quot;Tokens&quot;. Ein Token ist oft nur ein Teil eines Wortes. Die genaue Umrechnung ist von Modell zu Modell unterschiedlich. Dieser Rechner gibt dir eine Schätzung für die bekanntesten Modelle.</p>
           
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-blue-50 p-4 rounded-lg transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
@@ -262,6 +262,25 @@ export default function TokenCalculatorPage({ params }: Props) {
             </div>
           </div>
         </div>
+
+        {/* Footer */}
+        <footer className="mt-16 py-8 border-t border-gray-200">
+          <div className="text-center text-gray-600">
+            <p className="flex items-center justify-center gap-1">
+              Made with 
+              <span className="text-red-500 animate-pulse">❤️</span>
+              by 
+              <a 
+                href="https://fabian-bitzer.de/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-900 hover:text-blue-600 font-medium transition-colors duration-200"
+              >
+                Fabian Bitzer
+              </a>
+            </p>
+          </div>
+        </footer>
       </div>
 
       {/* Model Sidebar */}

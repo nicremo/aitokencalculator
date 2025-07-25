@@ -36,7 +36,7 @@ export function ModelSidebar({
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProvider, setSelectedProvider] = useState<ModelProvider | 'all'>('all');
   const [selectedType, setSelectedType] = useState<ModelType | 'all'>('all');
-  const [showDeprecated, setShowDeprecated] = useState(false);
+  const [showDeprecated] = useState(false);
   const [expandedProviders, setExpandedProviders] = useState<Set<ModelProvider>>(new Set());
 
   // Prevent body scroll when sidebar is open
@@ -112,7 +112,7 @@ export function ModelSidebar({
       }
     });
     setExpandedProviders(providersWithActiveModels);
-  }, []);
+  }, [activeModelIds]);
 
   return (
     <>

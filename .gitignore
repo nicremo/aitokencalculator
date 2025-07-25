@@ -39,3 +39,28 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# Python scripts (to be removed)
+*.py
+
+# Test directories (to be removed)
+chat_limit_tests/
+chatgpt_exact_limit/
+claude_exact_limit/
+claude_mega_limit/
+claude_precise_600k/
+gemini_chat_tests/
+gemini_limit_tests/
+
+# Screenshots (placeholder)
+screenshots/

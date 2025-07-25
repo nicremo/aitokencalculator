@@ -1,4 +1,4 @@
-export type ModelProvider = 'Google' | 'OpenAI' | 'Anthropic' | 'Meta' | 'Mistral AI' | 'Cohere' | 'AI21' | 'Hugging Face' | 'Amazon' | 'Aleph Alpha';
+export type ModelProvider = 'Google' | 'OpenAI' | 'Anthropic' | 'Meta' | 'Mistral AI' | 'Cohere' | 'AI21' | 'Hugging Face' | 'Amazon' | 'Aleph Alpha' | 'DeepSeek' | 'Alibaba Cloud' | 'Zhipu AI' | 'Stability AI';
 export type ModelType = 'Proprietär' | 'Open Source';
 export type ModelCategory = 'flagship' | 'standard' | 'lite' | 'specialized';
 
@@ -32,6 +32,9 @@ const cohereTokenCalc = (text: string) => {
   const wordCount = text.split(/\s+/).filter(word => word.length > 0).length;
   return Math.ceil(wordCount * 2.5);
 };
+const qwenTokenCalc = (text: string) => Math.ceil(text.length / 5); // Qwen has very efficient tokenization
+const deepseekTokenCalc = (text: string) => Math.ceil(text.length / 4); // Similar to GPT
+const glmTokenCalc = (text: string) => Math.ceil(text.length / 4); // Similar to GPT
 
 export const ALL_MODELS: LLMModel[] = [
   // Google Models
@@ -414,6 +417,21 @@ export const ALL_MODELS: LLMModel[] = [
     color: 'orange'
   },
   {
+    id: 'mistral-7b',
+    name: 'Mistral 7B',
+    provider: 'Mistral AI',
+    type: 'Open Source',
+    category: 'lite',
+    contextWindow: 32768,
+    maxOutput: 4096,
+    description: 'Kompaktes Open Source Modell',
+    releaseDate: '2023-09',
+    pricing: { input: 0.20, output: 0.20 },
+    calculateTokens: defaultTokenCalc,
+    features: ['Open Source', 'Apache 2.0', 'Edge-Deployment'],
+    color: 'orange'
+  },
+  {
     id: 'mixtral-8x22b',
     name: 'Mixtral 8x22B',
     provider: 'Mistral AI',
@@ -421,11 +439,11 @@ export const ALL_MODELS: LLMModel[] = [
     category: 'flagship',
     contextWindow: 65536,
     maxOutput: 4096,
-    description: 'MoE Modell mit 176B Parametern',
+    description: 'MoE mit 176B Parametern (39B aktiv)',
     releaseDate: '2024-04',
     pricing: { input: 1.2, output: 1.2 },
     calculateTokens: defaultTokenCalc,
-    features: ['MoE Architektur', 'Open Source'],
+    features: ['MoE Architektur', 'Open Source', '39B aktive Parameter'],
     color: 'orange'
   },
   {
@@ -538,6 +556,194 @@ export const ALL_MODELS: LLMModel[] = [
     calculateTokens: defaultTokenCalc,
     features: ['256K Kontext', 'Effizient'],
     color: 'indigo'
+  },
+
+  // DeepSeek Models
+  {
+    id: 'deepseek-v3',
+    name: 'DeepSeek-V3',
+    provider: 'DeepSeek',
+    type: 'Open Source',
+    category: 'flagship',
+    contextWindow: 128000,
+    maxOutput: 8192,
+    description: 'Chat-Modell mit 671B Parametern',
+    releaseDate: '2024-12',
+    pricing: { input: 0.27, output: 1.10 },
+    calculateTokens: deepseekTokenCalc,
+    features: ['Cache: $0.07/MTok', '50% Off-Peak Rabatt', 'MoE Architektur'],
+    color: 'cyan'
+  },
+  {
+    id: 'deepseek-r1',
+    name: 'DeepSeek-R1',
+    provider: 'DeepSeek',
+    type: 'Open Source',
+    category: 'specialized',
+    contextWindow: 128000,
+    maxOutput: 8192,
+    description: 'Reasoning-spezialisiertes Modell',
+    releaseDate: '2025-01',
+    pricing: { input: 0.55, output: 2.19 },
+    calculateTokens: deepseekTokenCalc,
+    features: ['Cache: $0.14/MTok', 'Reasoning-optimiert', 'Chain-of-Thought'],
+    color: 'cyan'
+  },
+  {
+    id: 'deepseek-v2',
+    name: 'DeepSeek-V2',
+    provider: 'DeepSeek',
+    type: 'Open Source',
+    category: 'standard',
+    contextWindow: 128000,
+    maxOutput: 8192,
+    description: 'MoE mit 236B Parametern (21B aktiv)',
+    releaseDate: '2024-05',
+    pricing: { input: 0.14, output: 0.70 },
+    calculateTokens: deepseekTokenCalc,
+    features: ['MoE Architektur', 'Effizient', 'Mehrsprachig'],
+    color: 'cyan'
+  },
+  {
+    id: 'deepseek-coder-v2',
+    name: 'DeepSeek-Coder-V2',
+    provider: 'DeepSeek',
+    type: 'Open Source',
+    category: 'specialized',
+    contextWindow: 128000,
+    maxOutput: 8192,
+    description: 'Code-spezialisiert, 236B Parameter',
+    releaseDate: '2024-06',
+    pricing: { input: 0.14, output: 0.70 },
+    calculateTokens: deepseekTokenCalc,
+    features: ['Code-Spezialist', '338 Sprachen', 'FIM Support'],
+    color: 'cyan'
+  },
+
+  // Qwen2.5 Models (Alibaba Cloud)
+  {
+    id: 'qwen2.5-72b',
+    name: 'Qwen2.5-72B-Instruct',
+    provider: 'Alibaba Cloud',
+    type: 'Open Source',
+    category: 'flagship',
+    contextWindow: 131072,
+    maxOutput: 8192,
+    description: '72B Parameter, sehr effizient',
+    releaseDate: '2024-09',
+    pricing: { input: 1.40, output: 5.60 },
+    calculateTokens: qwenTokenCalc,
+    features: ['151k Vokabular', 'Effiziente Tokenisierung', 'Mehrsprachig'],
+    color: 'orange'
+  },
+  {
+    id: 'qwen2.5-14b',
+    name: 'Qwen2.5-14B-Instruct',
+    provider: 'Alibaba Cloud',
+    type: 'Open Source',
+    category: 'standard',
+    contextWindow: 131072,
+    maxOutput: 8192,
+    description: '14B Parameter, ausgewogen',
+    releaseDate: '2024-09',
+    pricing: { input: 0.35, output: 1.40 },
+    calculateTokens: qwenTokenCalc,
+    features: ['1M Free Tokens/180 Tage', 'Tool Use', 'Strukturierte Ausgabe'],
+    color: 'orange'
+  },
+  {
+    id: 'qwen2.5-7b',
+    name: 'Qwen2.5-7B-Instruct',
+    provider: 'Alibaba Cloud',
+    type: 'Open Source',
+    category: 'lite',
+    contextWindow: 131072,
+    maxOutput: 8192,
+    description: '7B Parameter, sehr schnell',
+    releaseDate: '2024-09',
+    pricing: { input: 0.175, output: 0.70 },
+    calculateTokens: qwenTokenCalc,
+    features: ['Edge-Deployment', 'Mehrsprachig', 'Effizient'],
+    color: 'orange'
+  },
+
+  // GLM-4 Models (Zhipu AI)
+  {
+    id: 'glm-4-plus',
+    name: 'GLM-4-Plus',
+    provider: 'Zhipu AI',
+    type: 'Proprietär',
+    category: 'flagship',
+    contextWindow: 128000,
+    maxOutput: 4096,
+    description: 'Bilingual CN/EN, sehr leistungsstark',
+    releaseDate: '2024-08',
+    pricing: { input: 0.60, output: 3.00 },
+    calculateTokens: glmTokenCalc,
+    features: ['1M Gratis-Token', 'Tool Use', 'Web Search'],
+    color: 'red'
+  },
+  {
+    id: 'glm-4-long',
+    name: 'GLM-4-Long',
+    provider: 'Zhipu AI',
+    type: 'Proprietär',
+    category: 'specialized',
+    contextWindow: 1000000,
+    maxOutput: 4096,
+    description: '1M Token Kontext, extrem günstig',
+    releaseDate: '2024-09',
+    pricing: { input: 0.13, output: 0.13 },
+    calculateTokens: glmTokenCalc,
+    features: ['1M Kontext', 'Sehr günstig', 'Langtext-optimiert'],
+    color: 'red'
+  },
+
+  // Aleph Alpha Luminous Models
+  {
+    id: 'luminous-supreme',
+    name: 'Luminous Supreme',
+    provider: 'Aleph Alpha',
+    type: 'Proprietär',
+    category: 'flagship',
+    contextWindow: 32768,
+    maxOutput: 2048,
+    description: '70B Parameter, EU-fokussiert',
+    releaseDate: '2024-01',
+    pricing: { input: 31.90, output: 31.90 },
+    calculateTokens: defaultTokenCalc,
+    features: ['GDPR-konform', '5 EU-Sprachen', 'On-Premise verfügbar'],
+    color: 'violet'
+  },
+  {
+    id: 'luminous-extended',
+    name: 'Luminous Extended',
+    provider: 'Aleph Alpha',
+    type: 'Proprietär',
+    category: 'standard',
+    contextWindow: 32768,
+    maxOutput: 2048,
+    description: '30B Parameter, ausgewogen',
+    releaseDate: '2024-01',
+    pricing: { input: 8.20, output: 8.20 },
+    calculateTokens: defaultTokenCalc,
+    features: ['GDPR-konform', 'Mehrsprachig', 'Kontrollierbare Ausgabe'],
+    color: 'violet'
+  },
+  {
+    id: 'luminous-base',
+    name: 'Luminous Base',
+    provider: 'Aleph Alpha',
+    type: 'Proprietär',
+    category: 'lite',
+    contextWindow: 32768,
+    maxOutput: 2048,
+    description: '13B Parameter, effizient',
+    releaseDate: '2024-01',
+    pricing: { input: 5.50, output: 5.50 },
+    calculateTokens: defaultTokenCalc,
+    features: ['GDPR-konform', 'Schnell', 'API Sandbox verfügbar'],
+    color: 'violet'
   }
 ];
 

@@ -1,12 +1,34 @@
 {
-  "name": "token-calculator",
-  "version": "0.1.0",
-  "private": true,
+  "name": "ai-token-calculator",
+  "version": "1.0.0",
+  "description": "Calculate token counts and costs for 50+ AI models in real-time",
+  "author": "Fabian Bitzer <kontakt@bitzer-fabian.de>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicremo/aitokencalculator.git"
+  },
+  "homepage": "https://aitokencalculator.com",
+  "keywords": [
+    "ai",
+    "token",
+    "calculator",
+    "llm",
+    "gpt",
+    "claude",
+    "gemini",
+    "nextjs",
+    "typescript"
+  ],
+  "private": false,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "test": "echo \"No tests configured yet\""
   },
   "dependencies": {
     "clsx": "^2.1.1",

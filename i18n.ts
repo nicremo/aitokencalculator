@@ -14,6 +14,7 @@ export default getRequestConfig(async ({ locale }) => {
   console.log('i18n.ts - locale:', locale, 'validLocale:', validLocale);
   
   return {
+    locale: validLocale,
     messages: (await import(`./messages/${validLocale}.json`)).default
   };
 });
