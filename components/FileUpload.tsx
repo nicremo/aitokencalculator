@@ -98,7 +98,8 @@ export function FileUpload({ onFilesProcessed, onError }: FileUploadProps) {
           <span>{t('fileUpload.types.documents')}</span>
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-600">
-          <Image className="h-5 w-5" aria-hidden="true" alt="" />
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
+          <Image className="h-5 w-5" aria-hidden="true" />
           <span>{t('fileUpload.types.images')}</span>
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-600">
