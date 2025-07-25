@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Info } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { TokenCount, formatNumber, estimateApiCost } from '@/lib/tokenCalculator';
 import { LLMModel } from '@/lib/models';
-// Removed translations for now
 
 interface ModelCardProps {
   model: LLMModel;
@@ -13,7 +13,7 @@ interface ModelCardProps {
 }
 
 export function ModelCard({ model, tokenCount }: ModelCardProps) {
-  // Removed translations for now
+  const t = useTranslations();
   const [showDetails, setShowDetails] = useState(false);
   
   const getColorClasses = (color: string, status: string) => {
@@ -70,9 +70,9 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
         <p className="text-2xl font-semibold text-gray-900">
           {formatNumber(tokenCount.tokens)}
         </p>
-        <p className="text-xs text-gray-500 uppercase tracking-wide">Tokens</p>
+        <p className="text-xs text-gray-500 uppercase tracking-wide">{t('modelCard.tokens')}</p>
         <p className="text-xs text-gray-400 italic mt-1">
-          ~${cost.toFixed(4)} API-Kosten
+          ~${cost.toFixed(4)} {t('modelCard.apiCost')}
         </p>
       </div>
       
@@ -81,7 +81,7 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
         {/* API Context Window */}
         <div>
           <div className="flex justify-between text-xs text-gray-500 mb-1">
-            <span>API Context</span>
+            <span>{t('modelCard.apiContext')}</span>
             <span>{tokenCount.percentage.toFixed(0)}%</span>
           </div>
           <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
@@ -96,7 +96,7 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
         {model.realChatLimit && (
           <div>
             <div className="flex justify-between text-xs text-gray-500 mb-1">
-              <span>Chat Limit</span>
+              <span>{t('modelCard.chatLimit')}</span>
               <span>{((tokenCount.tokens / model.realChatLimit) * 100).toFixed(0)}%</span>
             </div>
             <div className="h-1 bg-gray-50 rounded-full overflow-hidden">
@@ -114,10 +114,10 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
       
       {/* Status Message */}
       <p className={cn("text-sm font-medium mb-5", colors.text)}>
-        {tokenCount.status === 'fits' && 'Ausreichend Platz verfügbar'}
-        {tokenCount.status === 'tight' && tokenCount.percentage <= 85 && 'Wird etwas knapp'}
-        {tokenCount.status === 'tight' && tokenCount.percentage > 85 && 'Sehr knapp, fast am Limit'}
-        {tokenCount.status === 'exceeds' && `Überschreitet um ${formatNumber(tokenCount.overflow || 0)} Tokens`}
+        {tokenCount.status === 'fits' && t('modelCard.status.fits')}
+        {tokenCount.status === 'tight' && tokenCount.percentage <= 85 && t('modelCard.status.tight')}
+        {tokenCount.status === 'tight' && tokenCount.percentage > 85 && t('modelCard.status.veryTight')}
+        {tokenCount.status === 'exceeds' && t('modelCard.status.exceeds', { count: formatNumber(tokenCount.overflow || 0) })}
       </p>
       
       {/* Details Toggle */}
@@ -126,7 +126,7 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
         className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-700 transition-all duration-150 hover:scale-[1.02]"
       >
         <Info className="h-3 w-3" />
-        <span>Details</span>
+        <span>{t('modelCard.details')}</span>
         <div className="transition-transform duration-200">
           {showDetails ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
         </div>
@@ -140,25 +140,25 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
         <div className="overflow-hidden">
           <div className="pt-4 border-t border-gray-50 space-y-2">
           <div className="flex justify-between text-xs">
-            <span className="text-gray-500">Kontext:</span>
+            <span className="text-gray-500">{t('modelCard.contextWindow')}:</span>
             <span className="font-medium text-gray-700">{formatNumber(model.contextWindow)}</span>
           </div>
           <div className="flex justify-between text-xs">
-            <span className="text-gray-500">Max Output:</span>
+            <span className="text-gray-500">{t('modelCard.maxOutput')}:</span>
             <span className="font-medium text-gray-700">{formatNumber(model.maxOutput)}</span>
           </div>
           <div className="flex justify-between text-xs">
-            <span className="text-gray-500">Verfügbar:</span>
+            <span className="text-gray-500">{t('modelCard.available')}:</span>
             <span className="font-medium text-gray-700">
               {formatNumber(model.contextWindow - tokenCount.tokens)}
             </span>
           </div>
           <div className="flex justify-between text-xs">
-            <span className="text-gray-500">Geschätzte Kosten:</span>
+            <span className="text-gray-500">{t('modelCard.estimatedCost')}:</span>
             <span className="font-medium text-gray-700">${cost.toFixed(4)}</span>
           </div>
           <div className="flex justify-between text-xs">
-            <span className="text-gray-500">Preis pro 1M Token:</span>
+            <span className="text-gray-500">{t('modelCard.pricePerMillion')}:</span>
             <span className="font-medium text-gray-700">
               ${model.pricing.input.toFixed(2)} / ${model.pricing.output.toFixed(2)}
             </span>
@@ -168,7 +168,7 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
           </div>
           {model.features && model.features.length > 0 && (
             <div className="mt-3 pt-2 border-t border-gray-50">
-              <p className="text-xs font-medium text-gray-700 mb-1">Features:</p>
+              <p className="text-xs font-medium text-gray-700 mb-1">{t('modelCard.features')}:</p>
               <div className="flex flex-wrap gap-1">
                 {model.features.map((feature, idx) => (
                   <span key={idx} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">
