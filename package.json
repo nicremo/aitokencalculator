@@ -31,6 +31,7 @@
     "test": "echo \"No tests configured yet\""
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.2.0",
     "clsx": "^2.1.1",
     "file-saver": "^2.0.5",
     "lucide-react": "^0.525.0",
