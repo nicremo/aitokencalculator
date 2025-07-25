@@ -25,7 +25,19 @@
     "title": "Drop files here or click to upload",
     "subtitle": "Supports TXT, MD, PDF, DOCX and images",
     "processing": "Processing...",
-    "error": "Error processing file"
+    "error": "Error processing file",
+    "errors": {
+      "pdfNotSupported": "[DA] Error processing file: PDF not yet supported",
+      "docxNotSupported": "[DA] Error processing file: DOCX not yet supported",
+      "imagesNotSupported": "[DA] Error processing file: Images not yet supported",
+      "fileTypeNotSupported": "[DA] Error processing file: .{fileType} not supported",
+      "processingError": "[DA] Error processing file: {error}"
+    },
+    "types": {
+      "documents": "[DA] Documents",
+      "images": "[DA] Images",
+      "audio": "[DA] Audio (soon)"
+    }
   },
   "modelLibrary": {
     "title": "Model Library",
@@ -54,7 +66,18 @@
     "contextWindow": "Context Window",
     "maxOutput": "Max Output",
     "available": "Available",
-    "estimatedCost": "Estimated Cost"
+    "estimatedCost": "Estimated Cost",
+    "apiCost": "[DA] API cost",
+    "apiContext": "[DA] API Context",
+    "chatLimit": "[DA] Chat Limit",
+    "pricePerMillion": "[DA] Price per 1M tokens",
+    "features": "[DA] Features",
+    "status": {
+      "fits": "[DA] Plenty of space available",
+      "tight": "[DA] Getting a bit tight",
+      "veryTight": "[DA] Very tight, almost at limit",
+      "exceeds": "[DA] Exceeds by {count} tokens"
+    }
   },
   "results": {
     "customize": "Customize Models",
@@ -72,7 +95,8 @@
       "tight": "⚠️ Tight",
       "exceeds": "❌ Too large"
     },
-    "costNote": "* Estimated API costs based on public prices (input tokens only)"
+    "costNote": "* Estimated API costs based on public prices (input tokens only)",
+    "title": "[DA] Analysis Results"
   },
   "info": {
     "title": "What are tokens?",
@@ -110,5 +134,9 @@
     "Amazon": "Amazon",
     "Hugging Face": "Hugging Face",
     "Aleph Alpha": "Aleph Alpha"
+  },
+  "footer": {
+    "madeWith": "[DA] Made with",
+    "by": "[DA] by"
   }
 }

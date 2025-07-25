@@ -25,7 +25,19 @@
     "title": "Drop files here or click to upload",
     "subtitle": "Supports TXT, MD, PDF, DOCX and images",
     "processing": "Processing...",
-    "error": "Error processing file"
+    "error": "Error processing file",
+    "errors": {
+      "pdfNotSupported": "[SV] Error processing file: PDF not yet supported",
+      "docxNotSupported": "[SV] Error processing file: DOCX not yet supported",
+      "imagesNotSupported": "[SV] Error processing file: Images not yet supported",
+      "fileTypeNotSupported": "[SV] Error processing file: .{fileType} not supported",
+      "processingError": "[SV] Error processing file: {error}"
+    },
+    "types": {
+      "documents": "[SV] Documents",
+      "images": "[SV] Images",
+      "audio": "[SV] Audio (soon)"
+    }
   },
   "modelLibrary": {
     "title": "Model Library",
@@ -54,7 +66,18 @@
     "contextWindow": "Context Window",
     "maxOutput": "Max Output",
     "available": "Available",
-    "estimatedCost": "Estimated Cost"
+    "estimatedCost": "Estimated Cost",
+    "apiCost": "[SV] API cost",
+    "apiContext": "[SV] API Context",
+    "chatLimit": "[SV] Chat Limit",
+    "pricePerMillion": "[SV] Price per 1M tokens",
+    "features": "[SV] Features",
+    "status": {
+      "fits": "[SV] Plenty of space available",
+      "tight": "[SV] Getting a bit tight",
+      "veryTight": "[SV] Very tight, almost at limit",
+      "exceeds": "[SV] Exceeds by {count} tokens"
+    }
   },
   "results": {
     "customize": "Customize Models",
@@ -72,7 +95,8 @@
       "tight": "⚠️ Tight",
       "exceeds": "❌ Too large"
     },
-    "costNote": "* Estimated API costs based on public prices (input tokens only)"
+    "costNote": "* Estimated API costs based on public prices (input tokens only)",
+    "title": "[SV] Analysis Results"
   },
   "info": {
     "title": "What are tokens?",
@@ -110,5 +134,9 @@
     "Amazon": "Amazon",
     "Hugging Face": "Hugging Face",
     "Aleph Alpha": "Aleph Alpha"
+  },
+  "footer": {
+    "madeWith": "[SV] Made with",
+    "by": "[SV] by"
   }
 }

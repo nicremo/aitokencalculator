@@ -25,7 +25,19 @@
     "title": "Przeciągnij pliki tutaj lub kliknij aby przesłać",
     "subtitle": "Obsługuje TXT, MD, PDF, DOCX i obrazy",
     "processing": "Przetwarzanie...",
-    "error": "Błąd podczas przetwarzania pliku"
+    "error": "Błąd podczas przetwarzania pliku",
+    "errors": {
+      "pdfNotSupported": "[PL] Error processing file: PDF not yet supported",
+      "docxNotSupported": "[PL] Error processing file: DOCX not yet supported",
+      "imagesNotSupported": "[PL] Error processing file: Images not yet supported",
+      "fileTypeNotSupported": "[PL] Error processing file: .{fileType} not supported",
+      "processingError": "[PL] Error processing file: {error}"
+    },
+    "types": {
+      "documents": "[PL] Documents",
+      "images": "[PL] Images",
+      "audio": "[PL] Audio (soon)"
+    }
   },
   "modelLibrary": {
     "title": "Biblioteka Modeli",
@@ -54,7 +66,18 @@
     "contextWindow": "Okno Kontekstu",
     "maxOutput": "Maks. Wyjście",
     "available": "Dostępne",
-    "estimatedCost": "Szacowany Koszt"
+    "estimatedCost": "Szacowany Koszt",
+    "apiCost": "[PL] API cost",
+    "apiContext": "[PL] API Context",
+    "chatLimit": "[PL] Chat Limit",
+    "pricePerMillion": "[PL] Price per 1M tokens",
+    "features": "[PL] Features",
+    "status": {
+      "fits": "[PL] Plenty of space available",
+      "tight": "[PL] Getting a bit tight",
+      "veryTight": "[PL] Very tight, almost at limit",
+      "exceeds": "[PL] Exceeds by {count} tokens"
+    }
   },
   "results": {
     "customize": "Dostosuj Modele",
@@ -72,7 +95,8 @@
       "tight": "⚠️ Ciasno",
       "exceeds": "❌ Za duże"
     },
-    "costNote": "* Szacowane koszty API oparte na cenach publicznych (tylko tokeny wejściowe)"
+    "costNote": "* Szacowane koszty API oparte na cenach publicznych (tylko tokeny wejściowe)",
+    "title": "[PL] Analysis Results"
   },
   "info": {
     "title": "Czym są tokeny?",
@@ -110,5 +134,9 @@
     "Amazon": "Amazon",
     "Hugging Face": "Hugging Face",
     "Aleph Alpha": "Aleph Alpha"
+  },
+  "footer": {
+    "madeWith": "[PL] Made with",
+    "by": "[PL] by"
   }
 }

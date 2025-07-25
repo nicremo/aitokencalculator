@@ -25,7 +25,19 @@
     "title": "Arrastra archivos aquí o haz clic para cargar",
     "subtitle": "Soporta TXT, MD, PDF, DOCX e imágenes",
     "processing": "Procesando...",
-    "error": "Error al procesar el archivo"
+    "error": "Error al procesar el archivo",
+    "errors": {
+      "pdfNotSupported": "[ES] Error processing file: PDF not yet supported",
+      "docxNotSupported": "[ES] Error processing file: DOCX not yet supported",
+      "imagesNotSupported": "[ES] Error processing file: Images not yet supported",
+      "fileTypeNotSupported": "[ES] Error processing file: .{fileType} not supported",
+      "processingError": "[ES] Error processing file: {error}"
+    },
+    "types": {
+      "documents": "[ES] Documents",
+      "images": "[ES] Images",
+      "audio": "[ES] Audio (soon)"
+    }
   },
   "modelLibrary": {
     "title": "Biblioteca de Modelos",
@@ -54,9 +66,21 @@
     "contextWindow": "Ventana de Contexto",
     "maxOutput": "Salida Máxima",
     "available": "Disponible",
-    "estimatedCost": "Costo Estimado"
+    "estimatedCost": "Costo Estimado",
+    "apiCost": "[ES] API cost",
+    "apiContext": "[ES] API Context",
+    "chatLimit": "[ES] Chat Limit",
+    "pricePerMillion": "[ES] Price per 1M tokens",
+    "features": "[ES] Features",
+    "status": {
+      "fits": "[ES] Plenty of space available",
+      "tight": "[ES] Getting a bit tight",
+      "veryTight": "[ES] Very tight, almost at limit",
+      "exceeds": "[ES] Exceeds by {count} tokens"
+    }
   },
   "results": {
+    "title": "[ES] Analysis Results",
     "customize": "Personalizar Modelos",
     "export": "Exportar como CSV",
     "comparison": "Tabla de Comparación",
@@ -110,5 +134,9 @@
     "Amazon": "Amazon",
     "Hugging Face": "Hugging Face",
     "Aleph Alpha": "Aleph Alpha"
+  },
+  "footer": {
+    "madeWith": "[ES] Made with",
+    "by": "[ES] by"
   }
 }

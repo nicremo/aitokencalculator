@@ -25,7 +25,19 @@
     "title": "Trascina i file qui o clicca per caricare",
     "subtitle": "Supporta TXT, MD, PDF, DOCX e immagini",
     "processing": "Elaborazione...",
-    "error": "Errore nell'elaborazione del file"
+    "error": "Errore nell'elaborazione del file",
+    "errors": {
+      "pdfNotSupported": "[IT] Error processing file: PDF not yet supported",
+      "docxNotSupported": "[IT] Error processing file: DOCX not yet supported",
+      "imagesNotSupported": "[IT] Error processing file: Images not yet supported",
+      "fileTypeNotSupported": "[IT] Error processing file: .{fileType} not supported",
+      "processingError": "[IT] Error processing file: {error}"
+    },
+    "types": {
+      "documents": "[IT] Documents",
+      "images": "[IT] Images",
+      "audio": "[IT] Audio (soon)"
+    }
   },
   "modelLibrary": {
     "title": "Libreria Modelli",
@@ -54,7 +66,18 @@
     "contextWindow": "Finestra di Contesto",
     "maxOutput": "Output Massimo",
     "available": "Disponibile",
-    "estimatedCost": "Costo Stimato"
+    "estimatedCost": "Costo Stimato",
+    "apiCost": "[IT] API cost",
+    "apiContext": "[IT] API Context",
+    "chatLimit": "[IT] Chat Limit",
+    "pricePerMillion": "[IT] Price per 1M tokens",
+    "features": "[IT] Features",
+    "status": {
+      "fits": "[IT] Plenty of space available",
+      "tight": "[IT] Getting a bit tight",
+      "veryTight": "[IT] Very tight, almost at limit",
+      "exceeds": "[IT] Exceeds by {count} tokens"
+    }
   },
   "results": {
     "customize": "Personalizza Modelli",
@@ -72,7 +95,8 @@
       "tight": "⚠️ Giusto",
       "exceeds": "❌ Troppo grande"
     },
-    "costNote": "* Costi API stimati basati su prezzi pubblici (solo token di input)"
+    "costNote": "* Costi API stimati basati su prezzi pubblici (solo token di input)",
+    "title": "[IT] Analysis Results"
   },
   "info": {
     "title": "Cosa sono i token?",
@@ -110,5 +134,9 @@
     "Amazon": "Amazon",
     "Hugging Face": "Hugging Face",
     "Aleph Alpha": "Aleph Alpha"
+  },
+  "footer": {
+    "madeWith": "[IT] Made with",
+    "by": "[IT] by"
   }
 }

@@ -25,7 +25,19 @@
     "title": "Déposez des fichiers ici ou cliquez pour télécharger",
     "subtitle": "Supporte TXT, MD, PDF, DOCX et images",
     "processing": "Traitement...",
-    "error": "Erreur lors du traitement du fichier"
+    "error": "Erreur lors du traitement du fichier",
+    "errors": {
+      "pdfNotSupported": "[FR] Error processing file: PDF not yet supported",
+      "docxNotSupported": "[FR] Error processing file: DOCX not yet supported",
+      "imagesNotSupported": "[FR] Error processing file: Images not yet supported",
+      "fileTypeNotSupported": "[FR] Error processing file: .{fileType} not supported",
+      "processingError": "[FR] Error processing file: {error}"
+    },
+    "types": {
+      "documents": "[FR] Documents",
+      "images": "[FR] Images",
+      "audio": "[FR] Audio (soon)"
+    }
   },
   "modelLibrary": {
     "title": "Bibliothèque de Modèles",
@@ -54,7 +66,18 @@
     "contextWindow": "Fenêtre de Contexte",
     "maxOutput": "Sortie Max",
     "available": "Disponible",
-    "estimatedCost": "Coût Estimé"
+    "estimatedCost": "Coût Estimé",
+    "apiCost": "[FR] API cost",
+    "apiContext": "[FR] API Context",
+    "chatLimit": "[FR] Chat Limit",
+    "pricePerMillion": "[FR] Price per 1M tokens",
+    "features": "[FR] Features",
+    "status": {
+      "fits": "[FR] Plenty of space available",
+      "tight": "[FR] Getting a bit tight",
+      "veryTight": "[FR] Very tight, almost at limit",
+      "exceeds": "[FR] Exceeds by {count} tokens"
+    }
   },
   "results": {
     "customize": "Personnaliser les Modèles",
@@ -72,7 +95,8 @@
       "tight": "⚠️ Juste",
       "exceeds": "❌ Trop grand"
     },
-    "costNote": "* Coûts API estimés basés sur les prix publics (tokens d'entrée uniquement)"
+    "costNote": "* Coûts API estimés basés sur les prix publics (tokens d'entrée uniquement)",
+    "title": "[FR] Analysis Results"
   },
   "info": {
     "title": "Que sont les tokens ?",
@@ -110,5 +134,9 @@
     "Amazon": "Amazon",
     "Hugging Face": "Hugging Face",
     "Aleph Alpha": "Aleph Alpha"
+  },
+  "footer": {
+    "madeWith": "[FR] Made with",
+    "by": "[FR] by"
   }
 }
