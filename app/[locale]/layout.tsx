@@ -1,18 +1,43 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
+import { Inter } from 'next/font/google';
+import { locales } from '@/i18n';
+
+const inter = Inter({ subsets: ['latin'] });
 
 interface Props {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }
 
-export default async function LocaleLayout({ children, params }: Props) {
-  const { locale } = await params;
+export async function generateMetadata({ params: { locale } }: Props) {
+  const t = await getTranslations({ locale, namespace: 'metadata' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    keywords: t('keywords'),
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      locale: locale,
+      alternateLocale: locales.filter(l => l !== locale),
+    },
+    alternates: {
+      canonical: `https://aitokencalculator.com/${locale}`,
+      languages: Object.fromEntries(
+        locales.map(l => [l, `https://aitokencalculator.com/${l}`])
+      ),
+    },
+  };
+}
+
+export default async function LocaleLayout({ children, params: { locale } }: Props) {
   const messages = await getMessages();
 
   return (
     <html lang={locale}>
-      <body>
+      <body className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

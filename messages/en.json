@@ -135,6 +135,16 @@
     "Hugging Face": "Hugging Face",
     "Aleph Alpha": "Aleph Alpha"
   },
+  "models": {
+    "gpt-4o": {
+      "description": "Most advanced model from OpenAI with multimodal capabilities.",
+      "features": ["Multimodal", "Vision"]
+    },
+    "gpt-4-turbo": {
+      "description": "Powerful and fast model for complex tasks.",
+      "features": ["JSON Mode", "Function Calling"]
+    }
+  },
   "footer": {
     "madeWith": "Made with",
     "by": "by"

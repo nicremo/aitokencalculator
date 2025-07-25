@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Info } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { TokenCount, formatNumber, estimateApiCost } from '@/lib/tokenCalculator';
 import { LLMModel } from '@/lib/models';
@@ -14,8 +14,18 @@ interface ModelCardProps {
 
 export function ModelCard({ model, tokenCount }: ModelCardProps) {
   const t = useTranslations();
+  const locale = useLocale();
   const [showDetails, setShowDetails] = useState(false);
-  
+
+  const formatCurrency = (amount: number, maximumFractionDigits = 4) => {
+    return new Intl.NumberFormat(locale, {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits,
+    }).format(amount);
+  };
+
   const getColorClasses = (color: string, status: string) => {
     const statusColors = {
       fits: {
@@ -72,7 +82,7 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
         </p>
         <p className="text-xs text-gray-500 uppercase tracking-wide">{t('modelCard.tokens')}</p>
         <p className="text-xs text-gray-400 italic mt-1">
-          ~${cost.toFixed(4)} {t('modelCard.apiCost')}
+          ~{formatCurrency(cost)} {t('modelCard.apiCost')}
         </p>
       </div>
       
@@ -155,12 +165,12 @@ export function ModelCard({ model, tokenCount }: ModelCardProps) {
           </div>
           <div className="flex justify-between text-xs">
             <span className="text-gray-500">{t('modelCard.estimatedCost')}:</span>
-            <span className="font-medium text-gray-700">${cost.toFixed(4)}</span>
+            <span className="font-medium text-gray-700">{formatCurrency(cost)}</span>
           </div>
           <div className="flex justify-between text-xs">
             <span className="text-gray-500">{t('modelCard.pricePerMillion')}:</span>
             <span className="font-medium text-gray-700">
-              ${model.pricing.input.toFixed(2)} / ${model.pricing.output.toFixed(2)}
+              {formatCurrency(model.pricing.input, 2)} / {formatCurrency(model.pricing.output, 2)}
             </span>
           </div>
           <div className="text-xs text-gray-500 mt-3 pt-2 border-t border-gray-50">

@@ -1,20 +1,19 @@
 import { getRequestConfig } from 'next-intl/server';
 
-// Supported locales
-export const locales = ['en', 'de', 'es', 'fr', 'it', 'pl', 'nl', 'pt', 'cs', 'sv', 'da', 'no', 'fi'] as const;
+export const locales = [
+  'en', 'de', 'es', 'fr', 'it', 'pl', 'nl', 'pt', 'cs', 'sv', 'da', 'no', 'fi',
+  'bg', 'hr', 'et', 'el', 'hu', 'ga', 'lv', 'lt', 'mt', 'ro', 'sk', 'sl'
+] as const;
 export type Locale = (typeof locales)[number];
 
-// Default locale
-export const defaultLocale: Locale = 'de';
+export const defaultLocale: Locale = 'en';
+export const localeDetection = true;
 
 export default getRequestConfig(async ({ locale }) => {
-  // Fallback to default if locale is undefined
-  const validLocale = locale || defaultLocale;
-  
-  console.log('i18n.ts - locale:', locale, 'validLocale:', validLocale);
-  
+  const validLocale = locales.includes(locale as any) ? locale : defaultLocale;
+
   return {
     locale: validLocale,
-    messages: (await import(`./messages/${validLocale}.json`)).default
+    messages: (await import(`./messages/${validLocale}.json`)).default,
   };
 });

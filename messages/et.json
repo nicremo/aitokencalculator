@@ -27,16 +27,16 @@
     "processing": "Processing...",
     "error": "Error processing file",
     "errors": {
-      "pdfNotSupported": "[PT] Error processing file: PDF not yet supported",
-      "docxNotSupported": "[PT] Error processing file: DOCX not yet supported",
-      "imagesNotSupported": "[PT] Error processing file: Images not yet supported",
-      "fileTypeNotSupported": "[PT] Error processing file: .{fileType} not supported",
-      "processingError": "[PT] Error processing file: {error}"
+      "pdfNotSupported": "Error processing file: PDF not yet supported",
+      "docxNotSupported": "Error processing file: DOCX not yet supported",
+      "imagesNotSupported": "Error processing file: Images not yet supported",
+      "fileTypeNotSupported": "Error processing file: .{fileType} not supported",
+      "processingError": "Error processing file: {error}"
     },
     "types": {
-      "documents": "[PT] Documents",
-      "images": "[PT] Images",
-      "audio": "[PT] Audio (soon)"
+      "documents": "Documents",
+      "images": "Images",
+      "audio": "Audio (soon)"
     }
   },
   "modelLibrary": {
@@ -67,19 +67,20 @@
     "maxOutput": "Max Output",
     "available": "Available",
     "estimatedCost": "Estimated Cost",
-    "apiCost": "[PT] API cost",
-    "apiContext": "[PT] API Context",
-    "chatLimit": "[PT] Chat Limit",
-    "pricePerMillion": "[PT] Price per 1M tokens",
-    "features": "[PT] Features",
+    "apiCost": "API cost",
+    "apiContext": "API Context",
+    "chatLimit": "Chat Limit",
+    "pricePerMillion": "Price per 1M tokens",
+    "features": "Features",
     "status": {
-      "fits": "[PT] Plenty of space available",
-      "tight": "[PT] Getting a bit tight",
-      "veryTight": "[PT] Very tight, almost at limit",
-      "exceeds": "[PT] Exceeds by {count} tokens"
+      "fits": "Plenty of space available",
+      "tight": "Getting a bit tight",
+      "veryTight": "Very tight, almost at limit",
+      "exceeds": "Exceeds by {count} tokens"
     }
   },
   "results": {
+    "title": "Analysis Results",
     "customize": "Customize Models",
     "export": "Export as CSV",
     "comparison": "Comparison Table",
@@ -95,8 +96,7 @@
       "tight": "⚠️ Tight",
       "exceeds": "❌ Too large"
     },
-    "costNote": "* Estimated API costs based on public prices (input tokens only)",
-    "title": "[PT] Analysis Results"
+    "costNote": "* Estimated API costs based on public prices (input tokens only)"
   },
   "info": {
     "title": "What are tokens?",
@@ -136,8 +136,8 @@
     "Aleph Alpha": "Aleph Alpha"
   },
   "footer": {
-    "madeWith": "[PT] Made with",
-    "by": "[PT] by"
+    "madeWith": "Made with",
+    "by": "by"
   },
   "models": {
     "gpt-4o": {
