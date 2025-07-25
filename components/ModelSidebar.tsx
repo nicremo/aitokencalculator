@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { X, Search, Settings, RotateCcw, Check, ChevronDown, ChevronRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
-// Removed translations for now
 import { 
   ALL_MODELS, 
   ModelProvider, 
@@ -32,7 +32,7 @@ export function ModelSidebar({
   onModelToggle,
   onResetToDefaults 
 }: ModelSidebarProps) {
-  // Removed translations for now
+  const t = useTranslations();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProvider, setSelectedProvider] = useState<ModelProvider | 'all'>('all');
   const [selectedType, setSelectedType] = useState<ModelType | 'all'>('all');
@@ -139,7 +139,7 @@ export function ModelSidebar({
             <div className="p-1.5 bg-gray-50 rounded-md">
               <Settings className="h-4 w-4 text-gray-600" />
             </div>
-            <h2 className="text-lg font-medium text-gray-900">Modelle</h2>
+            <h2 className="text-lg font-medium text-gray-900">{t('modelLibrary.title')}</h2>
           </div>
           <button
             onClick={onClose}
@@ -156,7 +156,7 @@ export function ModelSidebar({
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
             <input
               type="text"
-              placeholder="Suchen..."
+              placeholder={t('modelLibrary.search')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-9 pr-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-colors"
@@ -170,7 +170,7 @@ export function ModelSidebar({
               onChange={(e) => setSelectedProvider(e.target.value as ModelProvider | 'all')}
               className="flex-1 px-2 py-1.5 text-xs border border-gray-200 rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-gray-300"
             >
-              <option value="all">Alle Anbieter</option>
+              <option value="all">{t('modelLibrary.filters.allProviders')}</option>
               {PROVIDERS.map(provider => (
                 <option key={provider} value={provider}>{provider}</option>
               ))}
@@ -181,9 +181,9 @@ export function ModelSidebar({
               onChange={(e) => setSelectedType(e.target.value as ModelType | 'all')}
               className="flex-1 px-2 py-1.5 text-xs border border-gray-200 rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-gray-300"
             >
-              <option value="all">Alle Typen</option>
-              <option value="Proprietär">Proprietär</option>
-              <option value="Open Source">Open Source</option>
+              <option value="all">{t('modelLibrary.filters.allTypes')}</option>
+              <option value="Proprietär">{t('modelLibrary.filters.proprietary')}</option>
+              <option value="Open Source">{t('modelLibrary.filters.openSource')}</option>
             </select>
           </div>
         </div>
@@ -192,8 +192,8 @@ export function ModelSidebar({
         <div className="flex-1 overflow-y-auto overscroll-contain p-6" onWheel={(e) => e.stopPropagation()}>
           {Object.entries(groupedModels).length === 0 ? (
             <div className="text-center py-12 text-gray-500">
-              <p className="text-lg font-medium">Keine Modelle gefunden</p>
-              <p className="text-sm mt-2">Versuche deine Suchkriterien anzupassen</p>
+              <p className="text-lg font-medium">{t('modelLibrary.noResults')}</p>
+              <p className="text-sm mt-2">{t('modelLibrary.noResultsHint')}</p>
             </div>
           ) : (
             <div className="space-y-6">
@@ -259,7 +259,7 @@ export function ModelSidebar({
                                 {model.name}
                               </span>
                               {activeModelIds.includes(model.id) && (
-                                <span className="text-[10px] font-medium text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded">aktiv</span>
+                                <span className="text-[10px] font-medium text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded">{t('modelLibrary.active')}</span>
                               )}
                             </div>
                             <p className="text-xs text-gray-500 mt-0.5 line-clamp-1">{model.description}</p>
@@ -292,18 +292,18 @@ export function ModelSidebar({
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-gray-600 hover:text-gray-800 hover:bg-white rounded-md transition-all duration-150"
           >
             <RotateCcw className="h-3 w-3" />
-            <span>Zurücksetzen</span>
+            <span>{t('modelLibrary.resetDefaults')}</span>
           </button>
           
           <div className="flex items-center gap-3">
             <span className="text-xs text-gray-500">
-              {activeModelIds.length} ausgewählt
+              {t('modelLibrary.selectedCount', { count: activeModelIds.length })}
             </span>
             <button
               onClick={onClose}
               className="px-4 py-1.5 bg-gray-900 text-white text-xs rounded-md hover:bg-gray-800 transition-colors duration-150"
             >
-              Fertig
+              {t('modelLibrary.done')}
             </button>
           </div>
         </div>
