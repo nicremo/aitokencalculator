@@ -25,7 +25,19 @@
     "title": "Drop files here or click to upload",
     "subtitle": "Supports TXT, MD, PDF, DOCX and images",
     "processing": "Processing...",
-    "error": "Error processing file"
+    "error": "Error processing file",
+    "errors": {
+      "pdfNotSupported": "Error processing file: PDF not yet supported",
+      "docxNotSupported": "Error processing file: DOCX not yet supported",
+      "imagesNotSupported": "Error processing file: Images not yet supported",
+      "fileTypeNotSupported": "Error processing file: .{fileType} not supported",
+      "processingError": "Error processing file: {error}"
+    },
+    "types": {
+      "documents": "Documents",
+      "images": "Images",
+      "audio": "Audio (soon)"
+    }
   },
   "modelLibrary": {
     "title": "Model Library",
@@ -54,9 +66,21 @@
     "contextWindow": "Context Window",
     "maxOutput": "Max Output",
     "available": "Available",
-    "estimatedCost": "Estimated Cost"
+    "estimatedCost": "Estimated Cost",
+    "apiCost": "API cost",
+    "apiContext": "API Context",
+    "chatLimit": "Chat Limit",
+    "pricePerMillion": "Price per 1M tokens",
+    "features": "Features",
+    "status": {
+      "fits": "Plenty of space available",
+      "tight": "Getting a bit tight",
+      "veryTight": "Very tight, almost at limit",
+      "exceeds": "Exceeds by {count} tokens"
+    }
   },
   "results": {
+    "title": "Analysis Results",
     "customize": "Customize Models",
     "export": "Export as CSV",
     "comparison": "Comparison Table",
