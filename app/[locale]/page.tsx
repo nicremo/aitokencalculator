@@ -269,9 +269,9 @@ export default function TokenCalculatorPage({}: Props) {
         <footer className="mt-16 py-8 border-t border-gray-200">
           <div className="text-center text-gray-600">
             <p className="flex items-center justify-center gap-1">
-              Made with 
+              {t('footer.madeWith')} 
               <span className="text-red-500 animate-pulse">❤️</span>
-              by 
+              {t('footer.by')} 
               <a 
                 href="https://fabian-bitzer.de/" 
                 target="_blank" 
