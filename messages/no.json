@@ -1,127 +1,127 @@
 {
   "metadata": {
-    "title": "AI Token Calculator - Count Tokens for ChatGPT, Claude & Gemini",
-    "description": "Free online token calculator for AI models. Check if your text fits in GPT-4, Claude, Gemini context windows. Estimate API costs instantly.",
-    "keywords": "token calculator, AI token counter, ChatGPT tokens, Claude tokens, Gemini tokens, LLM token calculator, API cost calculator"
+    "title": "AI Token Kalkulator - Tell Tokens for ChatGPT, Claude & Gemini",
+    "description": "Gratis online token kalkulator for AI-modeller. Sjekk om teksten din passer inn i GPT-4, Claude, Gemini kontekstvinduer. Estimer API-kostnader umiddelbart.",
+    "keywords": "token kalkulator, AI token teller, ChatGPT tokens, Claude tokens, Gemini tokens, LLM token kalkulator, API kostnadskalkulator"
   },
   "header": {
-    "title": "AI Token Calculator",
-    "subtitle": "Analyze your texts for AI models",
-    "languageSelector": "Language"
+    "title": "AI Token Kalkulator",
+    "subtitle": "Analyser tekstene dine for AI-modeller",
+    "languageSelector": "Språk"
   },
   "tabs": {
-    "text": "Text",
-    "files": "Files"
+    "text": "Tekst",
+    "files": "Filer"
   },
   "input": {
-    "placeholder": "Paste your text here...",
+    "placeholder": "Lim inn teksten din her...",
     "stats": {
-      "characters": "characters",
-      "words": "words",
+      "characters": "tegn",
+      "words": "ord",
       "tokens": "tokens"
     }
   },
   "fileUpload": {
-    "title": "Drop files here or click to upload",
-    "subtitle": "Supports TXT, MD, PDF, DOCX and images",
-    "processing": "Processing...",
-    "error": "Error processing file",
+    "title": "Slipp filer her eller klikk for å laste opp",
+    "subtitle": "Støtter TXT, MD, PDF, DOCX og bilder",
+    "processing": "Behandler...",
+    "error": "Feil under filbehandling",
     "errors": {
-      "pdfNotSupported": "[NO] Error processing file: PDF not yet supported",
-      "docxNotSupported": "[NO] Error processing file: DOCX not yet supported",
-      "imagesNotSupported": "[NO] Error processing file: Images not yet supported",
-      "fileTypeNotSupported": "[NO] Error processing file: .{fileType} not supported",
-      "processingError": "[NO] Error processing file: {error}"
+      "pdfNotSupported": "Feil under filbehandling: PDF støttes ikke ennå",
+      "docxNotSupported": "Feil under filbehandling: DOCX støttes ikke ennå",
+      "imagesNotSupported": "Feil under filbehandling: Bilder støttes ikke ennå",
+      "fileTypeNotSupported": "Feil under filbehandling: .{fileType} støttes ikke",
+      "processingError": "Feil under filbehandling: {error}"
     },
     "types": {
-      "documents": "[NO] Documents",
-      "images": "[NO] Images",
-      "audio": "[NO] Audio (soon)"
+      "documents": "Dokumenter",
+      "images": "Bilder",
+      "audio": "Lyd (snart)"
     }
   },
   "modelLibrary": {
-    "title": "Model Library",
-    "selectPrompt": "Select the AI models you want to compare:",
-    "button": "Select Models",
-    "activeCount": "{count} active",
-    "search": "Search model...",
+    "title": "Modellbibliotek",
+    "selectPrompt": "Velg AI-modellene du vil sammenligne:",
+    "button": "Velg Modeller",
+    "activeCount": "{count} aktive",
+    "search": "Søk modell...",
     "filters": {
-      "allProviders": "All Providers",
-      "allTypes": "All Types",
-      "proprietary": "Proprietary",
-      "openSource": "Open Source"
+      "allProviders": "Alle Leverandører",
+      "allTypes": "Alle Typer",
+      "proprietary": "Proprietær",
+      "openSource": "Åpen Kildekode"
     },
-    "showDeprecated": "Show deprecated models",
-    "noResults": "No models found",
-    "noResultsHint": "Try adjusting your search criteria",
-    "resetDefaults": "Reset to defaults",
-    "selectedCount": "{count} models selected",
-    "done": "Done",
-    "active": "active",
-    "deprecated": "deprecated"
+    "showDeprecated": "Vis utdaterte modeller",
+    "noResults": "Ingen modeller funnet",
+    "noResultsHint": "Prøv å justere søkekriteriene dine",
+    "resetDefaults": "Tilbakestill til standard",
+    "selectedCount": "{count} modeller valgt",
+    "done": "Ferdig",
+    "active": "aktiv",
+    "deprecated": "utdatert"
   },
   "modelCard": {
     "tokens": "Tokens",
-    "details": "Details",
-    "contextWindow": "Context Window",
-    "maxOutput": "Max Output",
-    "available": "Available",
-    "estimatedCost": "Estimated Cost",
-    "apiCost": "[NO] API cost",
-    "apiContext": "[NO] API Context",
-    "chatLimit": "[NO] Chat Limit",
-    "pricePerMillion": "[NO] Price per 1M tokens",
-    "features": "[NO] Features",
+    "details": "Detaljer",
+    "contextWindow": "Kontekstvindu",
+    "maxOutput": "Maksimal Utgang",
+    "available": "Tilgjengelig",
+    "estimatedCost": "Estimert Kostnad",
+    "apiCost": "API-kostnad",
+    "apiContext": "API-kontekst",
+    "chatLimit": "Chatgrense",
+    "pricePerMillion": "Pris per 1M tokens",
+    "features": "Funksjoner",
     "status": {
-      "fits": "[NO] Plenty of space available",
-      "tight": "[NO] Getting a bit tight",
-      "veryTight": "[NO] Very tight, almost at limit",
-      "exceeds": "[NO] Exceeds by {count} tokens"
+      "fits": "Godt med plass tilgjengelig",
+      "tight": "Begynner å bli litt trangt",
+      "veryTight": "Veldig trangt, nesten på grensen",
+      "exceeds": "Overskrider med {count} tokens"
     }
   },
   "results": {
-    "customize": "Customize Models",
-    "export": "Export as CSV",
-    "comparison": "Comparison Table",
+    "title": "Analyseresultater",
+    "customize": "Tilpass Modeller",
+    "export": "Eksporter som CSV",
+    "comparison": "Sammenligningstabell",
     "headers": {
-      "model": "Model",
-      "yourTokens": "Your Tokens",
-      "contextWindow": "Context Window",
+      "model": "Modell",
+      "yourTokens": "Dine Tokens",
+      "contextWindow": "Kontekstvindu",
       "status": "Status",
-      "cost": "Cost*"
+      "cost": "Kostnad*"
     },
     "status": {
-      "fits": "✅ Fits",
-      "tight": "⚠️ Tight",
-      "exceeds": "❌ Too large"
+      "fits": "✅ Passer",
+      "tight": "⚠️ Trangt",
+      "exceeds": "❌ For stort"
     },
-    "costNote": "* Estimated API costs based on public prices (input tokens only)",
-    "title": "[NO] Analysis Results"
+    "costNote": "* Estimerte API-kostnader basert på offentlige priser (kun input-tokens)"
   },
   "info": {
-    "title": "What are tokens?",
-    "description": "Language models like Gemini or ChatGPT don't read words, but \"tokens\". A token is often just part of a word. The exact conversion varies from model to model. This calculator gives you an estimate for the most popular models.",
+    "title": "Hva er tokens?",
+    "description": "Språkmodeller som Gemini eller ChatGPT leser ikke ord, men \"tokens\". En token er ofte bare en del av et ord. Den nøyaktige konverteringen varierer fra modell til modell. Denne kalkulatoren gir deg et estimat for de mest populære modellene.",
     "rules": {
-      "title": "Rule of thumb",
-      "token": "1 token ≈ 4 characters",
-      "words": "100 tokens ≈ 75 words"
+      "title": "Tommelfingerregel",
+      "token": "1 token ≈ 4 tegn",
+      "words": "100 tokens ≈ 75 ord"
     },
     "languages": {
-      "title": "English text",
-      "description": "Most efficient tokenization",
-      "note": "baseline for calculations"
+      "title": "Norsk tekst",
+      "description": "Krever ~10% flere tokens",
+      "note": "på grunn av lengre ord"
     },
     "multimodal": {
       "title": "Multimodal",
-      "images": "Images: ~200-800 tokens",
-      "audio": "Audio: ~32 tokens/second"
+      "images": "Bilder: ~200-800 tokens",
+      "audio": "Lyd: ~32 tokens/sekund"
     }
   },
   "status": {
-    "fits": "✅ Great! Plenty of space available.",
-    "tight": "⚠️ Still fits, but getting tight.",
-    "veryTight": "⚠️ Very tight! Almost at limit.",
-    "exceeds": "❌ Too large! Exceeds by {count} tokens."
+    "fits": "✅ Flott! Godt med plass tilgjengelig.",
+    "tight": "⚠️ Passer fortsatt, men blir trangt.",
+    "veryTight": "⚠️ Veldig trangt! Nesten på grensen.",
+    "exceeds": "❌ For stort! Overskrider med {count} tokens."
   },
   "providers": {
     "Google": "Google",
@@ -136,22 +136,22 @@
     "Aleph Alpha": "Aleph Alpha"
   },
   "footer": {
-    "madeWith": "[NO] Made with",
-    "by": "[NO] by"
+    "madeWith": "Laget med",
+    "by": "av"
   },
   "models": {
     "gpt-4o": {
-      "description": "Most advanced model from OpenAI with multimodal capabilities.",
+      "description": "Den mest avanserte modellen fra OpenAI med multimodale funksjoner.",
       "features": [
         "Multimodal",
-        "Vision"
+        "Syn"
       ]
     },
     "gpt-4-turbo": {
-      "description": "Powerful and fast model for complex tasks.",
+      "description": "Kraftig og rask modell for komplekse oppgaver.",
       "features": [
-        "JSON Mode",
-        "Function Calling"
+        "JSON-modus",
+        "Funksjonskall"
       ]
     }
   }

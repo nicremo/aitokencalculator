@@ -1,127 +1,127 @@
 {
   "metadata": {
-    "title": "AI Token Calculator - Count Tokens for ChatGPT, Claude & Gemini",
-    "description": "Free online token calculator for AI models. Check if your text fits in GPT-4, Claude, Gemini context windows. Estimate API costs instantly.",
-    "keywords": "token calculator, AI token counter, ChatGPT tokens, Claude tokens, Gemini tokens, LLM token calculator, API cost calculator"
+    "title": "AI Token Calculator - Räkna Tokens för ChatGPT, Claude & Gemini",
+    "description": "Gratis online tokenräknare för AI-modeller. Kontrollera om din text passar i GPT-4, Claude, Gemini kontextfönster. Uppskatta API-kostnader direkt.",
+    "keywords": "tokenräknare, AI tokenräknare, ChatGPT tokens, Claude tokens, Gemini tokens, LLM tokenräknare, API kostnadskalkylator"
   },
   "header": {
     "title": "AI Token Calculator",
-    "subtitle": "Analyze your texts for AI models",
-    "languageSelector": "Language"
+    "subtitle": "Analysera dina texter för AI-modeller",
+    "languageSelector": "Språk"
   },
   "tabs": {
     "text": "Text",
-    "files": "Files"
+    "files": "Filer"
   },
   "input": {
-    "placeholder": "Paste your text here...",
+    "placeholder": "Klistra in din text här...",
     "stats": {
-      "characters": "characters",
-      "words": "words",
+      "characters": "tecken",
+      "words": "ord",
       "tokens": "tokens"
     }
   },
   "fileUpload": {
-    "title": "Drop files here or click to upload",
-    "subtitle": "Supports TXT, MD, PDF, DOCX and images",
-    "processing": "Processing...",
-    "error": "Error processing file",
+    "title": "Släpp filer här eller klicka för att ladda upp",
+    "subtitle": "Stöder TXT, MD, PDF, DOCX och bilder",
+    "processing": "Bearbetar...",
+    "error": "Fel vid filbearbetning",
     "errors": {
-      "pdfNotSupported": "[SV] Error processing file: PDF not yet supported",
-      "docxNotSupported": "[SV] Error processing file: DOCX not yet supported",
-      "imagesNotSupported": "[SV] Error processing file: Images not yet supported",
-      "fileTypeNotSupported": "[SV] Error processing file: .{fileType} not supported",
-      "processingError": "[SV] Error processing file: {error}"
+      "pdfNotSupported": "Fel vid filbearbetning: PDF stöds inte än",
+      "docxNotSupported": "Fel vid filbearbetning: DOCX stöds inte än",
+      "imagesNotSupported": "Fel vid filbearbetning: Bilder stöds inte än",
+      "fileTypeNotSupported": "Fel vid filbearbetning: .{fileType} stöds inte",
+      "processingError": "Fel vid filbearbetning: {error}"
     },
     "types": {
-      "documents": "[SV] Documents",
-      "images": "[SV] Images",
-      "audio": "[SV] Audio (soon)"
+      "documents": "Dokument",
+      "images": "Bilder",
+      "audio": "Ljud (snart)"
     }
   },
   "modelLibrary": {
-    "title": "Model Library",
-    "selectPrompt": "Select the AI models you want to compare:",
-    "button": "Select Models",
-    "activeCount": "{count} active",
-    "search": "Search model...",
+    "title": "Modellbibliotek",
+    "selectPrompt": "Välj de AI-modeller du vill jämföra:",
+    "button": "Välj Modeller",
+    "activeCount": "{count} aktiva",
+    "search": "Sök modell...",
     "filters": {
-      "allProviders": "All Providers",
-      "allTypes": "All Types",
-      "proprietary": "Proprietary",
-      "openSource": "Open Source"
+      "allProviders": "Alla Leverantörer",
+      "allTypes": "Alla Typer",
+      "proprietary": "Proprietär",
+      "openSource": "Öppen Källkod"
     },
-    "showDeprecated": "Show deprecated models",
-    "noResults": "No models found",
-    "noResultsHint": "Try adjusting your search criteria",
-    "resetDefaults": "Reset to defaults",
-    "selectedCount": "{count} models selected",
-    "done": "Done",
-    "active": "active",
-    "deprecated": "deprecated"
+    "showDeprecated": "Visa föråldrade modeller",
+    "noResults": "Inga modeller hittades",
+    "noResultsHint": "Försök justera dina sökkriterier",
+    "resetDefaults": "Återställ till standard",
+    "selectedCount": "{count} modeller valda",
+    "done": "Klar",
+    "active": "aktiv",
+    "deprecated": "föråldrad"
   },
   "modelCard": {
     "tokens": "Tokens",
-    "details": "Details",
-    "contextWindow": "Context Window",
-    "maxOutput": "Max Output",
-    "available": "Available",
-    "estimatedCost": "Estimated Cost",
-    "apiCost": "[SV] API cost",
-    "apiContext": "[SV] API Context",
-    "chatLimit": "[SV] Chat Limit",
-    "pricePerMillion": "[SV] Price per 1M tokens",
-    "features": "[SV] Features",
+    "details": "Detaljer",
+    "contextWindow": "Kontextfönster",
+    "maxOutput": "Maximal Utdata",
+    "available": "Tillgänglig",
+    "estimatedCost": "Uppskattad Kostnad",
+    "apiCost": "API-kostnad",
+    "apiContext": "API Kontext",
+    "chatLimit": "Chattgräns",
+    "pricePerMillion": "Pris per 1M tokens",
+    "features": "Funktioner",
     "status": {
-      "fits": "[SV] Plenty of space available",
-      "tight": "[SV] Getting a bit tight",
-      "veryTight": "[SV] Very tight, almost at limit",
-      "exceeds": "[SV] Exceeds by {count} tokens"
+      "fits": "Gott om utrymme tillgängligt",
+      "tight": "Börjar bli lite trångt",
+      "veryTight": "Mycket trångt, nästan vid gränsen",
+      "exceeds": "Överskrider med {count} tokens"
     }
   },
   "results": {
-    "customize": "Customize Models",
-    "export": "Export as CSV",
-    "comparison": "Comparison Table",
+    "title": "Analysresultat",
+    "customize": "Anpassa Modeller",
+    "export": "Exportera som CSV",
+    "comparison": "Jämförelsetabell",
     "headers": {
-      "model": "Model",
-      "yourTokens": "Your Tokens",
-      "contextWindow": "Context Window",
+      "model": "Modell",
+      "yourTokens": "Dina Tokens",
+      "contextWindow": "Kontextfönster",
       "status": "Status",
-      "cost": "Cost*"
+      "cost": "Kostnad*"
     },
     "status": {
-      "fits": "✅ Fits",
-      "tight": "⚠️ Tight",
-      "exceeds": "❌ Too large"
+      "fits": "✅ Passar",
+      "tight": "⚠️ Trångt",
+      "exceeds": "❌ För stor"
     },
-    "costNote": "* Estimated API costs based on public prices (input tokens only)",
-    "title": "[SV] Analysis Results"
+    "costNote": "* Uppskattade API-kostnader baserade på offentliga priser (endast input-tokens)"
   },
   "info": {
-    "title": "What are tokens?",
-    "description": "Language models like Gemini or ChatGPT don't read words, but \"tokens\". A token is often just part of a word. The exact conversion varies from model to model. This calculator gives you an estimate for the most popular models.",
+    "title": "Vad är tokens?",
+    "description": "Språkmodeller som Gemini eller ChatGPT läser inte ord, utan \"tokens\". En token är ofta bara en del av ett ord. Den exakta konverteringen varierar från modell till modell. Denna kalkylator ger dig en uppskattning för de mest populära modellerna.",
     "rules": {
-      "title": "Rule of thumb",
-      "token": "1 token ≈ 4 characters",
-      "words": "100 tokens ≈ 75 words"
+      "title": "Tumregel",
+      "token": "1 token ≈ 4 tecken",
+      "words": "100 tokens ≈ 75 ord"
     },
     "languages": {
-      "title": "English text",
-      "description": "Most efficient tokenization",
-      "note": "baseline for calculations"
+      "title": "Svensk text",
+      "description": "Kräver ~10% fler tokens",
+      "note": "på grund av längre ord"
     },
     "multimodal": {
       "title": "Multimodal",
-      "images": "Images: ~200-800 tokens",
-      "audio": "Audio: ~32 tokens/second"
+      "images": "Bilder: ~200-800 tokens",
+      "audio": "Ljud: ~32 tokens/sekund"
     }
   },
   "status": {
-    "fits": "✅ Great! Plenty of space available.",
-    "tight": "⚠️ Still fits, but getting tight.",
-    "veryTight": "⚠️ Very tight! Almost at limit.",
-    "exceeds": "❌ Too large! Exceeds by {count} tokens."
+    "fits": "✅ Utmärkt! Gott om utrymme tillgängligt.",
+    "tight": "⚠️ Passar fortfarande, men blir trångt.",
+    "veryTight": "⚠️ Mycket trångt! Nästan vid gränsen.",
+    "exceeds": "❌ För stor! Överskrider med {count} tokens."
   },
   "providers": {
     "Google": "Google",
@@ -136,22 +136,22 @@
     "Aleph Alpha": "Aleph Alpha"
   },
   "footer": {
-    "madeWith": "[SV] Made with",
-    "by": "[SV] by"
+    "madeWith": "Gjord med",
+    "by": "av"
   },
   "models": {
     "gpt-4o": {
-      "description": "Most advanced model from OpenAI with multimodal capabilities.",
+      "description": "Den mest avancerade modellen från OpenAI med multimodala funktioner.",
       "features": [
         "Multimodal",
-        "Vision"
+        "Syn"
       ]
     },
     "gpt-4-turbo": {
-      "description": "Powerful and fast model for complex tasks.",
+      "description": "Kraftfull och snabb modell för komplexa uppgifter.",
       "features": [
-        "JSON Mode",
-        "Function Calling"
+        "JSON-läge",
+        "Funktionsanrop"
       ]
     }
   }

@@ -27,16 +27,16 @@
     "processing": "Przetwarzanie...",
     "error": "Błąd podczas przetwarzania pliku",
     "errors": {
-      "pdfNotSupported": "[PL] Error processing file: PDF not yet supported",
-      "docxNotSupported": "[PL] Error processing file: DOCX not yet supported",
-      "imagesNotSupported": "[PL] Error processing file: Images not yet supported",
-      "fileTypeNotSupported": "[PL] Error processing file: .{fileType} not supported",
-      "processingError": "[PL] Error processing file: {error}"
+      "pdfNotSupported": "Błąd podczas przetwarzania pliku: PDF nie jest jeszcze obsługiwany",
+      "docxNotSupported": "Błąd podczas przetwarzania pliku: DOCX nie jest jeszcze obsługiwany",
+      "imagesNotSupported": "Błąd podczas przetwarzania pliku: Obrazy nie są jeszcze obsługiwane",
+      "fileTypeNotSupported": "Błąd podczas przetwarzania pliku: .{fileType} nie jest obsługiwany",
+      "processingError": "Błąd podczas przetwarzania pliku: {error}"
     },
     "types": {
-      "documents": "[PL] Documents",
-      "images": "[PL] Images",
-      "audio": "[PL] Audio (soon)"
+      "documents": "Dokumenty",
+      "images": "Obrazy",
+      "audio": "Audio (wkrótce)"
     }
   },
   "modelLibrary": {
@@ -67,19 +67,20 @@
     "maxOutput": "Maks. Wyjście",
     "available": "Dostępne",
     "estimatedCost": "Szacowany Koszt",
-    "apiCost": "[PL] API cost",
-    "apiContext": "[PL] API Context",
-    "chatLimit": "[PL] Chat Limit",
-    "pricePerMillion": "[PL] Price per 1M tokens",
-    "features": "[PL] Features",
+    "apiCost": "Koszt API",
+    "apiContext": "Kontekst API",
+    "chatLimit": "Limit czatu",
+    "pricePerMillion": "Cena za 1M tokenów",
+    "features": "Funkcje",
     "status": {
-      "fits": "[PL] Plenty of space available",
-      "tight": "[PL] Getting a bit tight",
-      "veryTight": "[PL] Very tight, almost at limit",
-      "exceeds": "[PL] Exceeds by {count} tokens"
+      "fits": "Dużo miejsca dostępnego",
+      "tight": "Robisz się trochę ciasno",
+      "veryTight": "Bardzo ciasno, prawie na limicie",
+      "exceeds": "Przekracza o {count} tokenów"
     }
   },
   "results": {
+    "title": "Wyniki Analizy",
     "customize": "Dostosuj Modele",
     "export": "Eksportuj jako CSV",
     "comparison": "Tabela Porównawcza",
@@ -95,8 +96,7 @@
       "tight": "⚠️ Ciasno",
       "exceeds": "❌ Za duże"
     },
-    "costNote": "* Szacowane koszty API oparte na cenach publicznych (tylko tokeny wejściowe)",
-    "title": "[PL] Analysis Results"
+    "costNote": "* Szacowane koszty API oparte na cenach publicznych (tylko tokeny wejściowe)"
   },
   "info": {
     "title": "Czym są tokeny?",
@@ -136,22 +136,22 @@
     "Aleph Alpha": "Aleph Alpha"
   },
   "footer": {
-    "madeWith": "[PL] Made with",
-    "by": "[PL] by"
+    "madeWith": "Stworzone z",
+    "by": "przez"
   },
   "models": {
     "gpt-4o": {
-      "description": "Most advanced model from OpenAI with multimodal capabilities.",
+      "description": "Najbardziej zaawansowany model OpenAI z możliwościami multimodalnymi.",
       "features": [
-        "Multimodal",
-        "Vision"
+        "Multimodalny",
+        "Wizja"
       ]
     },
     "gpt-4-turbo": {
-      "description": "Powerful and fast model for complex tasks.",
+      "description": "Potężny i szybki model do złożonych zadań.",
       "features": [
-        "JSON Mode",
-        "Function Calling"
+        "Tryb JSON",
+        "Wywoływanie funkcji"
       ]
     }
   }

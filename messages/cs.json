@@ -1,127 +1,127 @@
 {
   "metadata": {
-    "title": "AI Token Calculator - Count Tokens for ChatGPT, Claude & Gemini",
-    "description": "Free online token calculator for AI models. Check if your text fits in GPT-4, Claude, Gemini context windows. Estimate API costs instantly.",
-    "keywords": "token calculator, AI token counter, ChatGPT tokens, Claude tokens, Gemini tokens, LLM token calculator, API cost calculator"
+    "title": "Kalkulačka tokenů AI - Počítejte tokeny pro ChatGPT, Claude a Gemini",
+    "description": "Bezplatná online kalkulačka tokenů pro modely AI. Zkontrolujte, zda se váš text vejde do kontextových oken GPT-4, Claude, Gemini. Okamžitě odhadněte náklady na API.",
+    "keywords": "kalkulačka tokenů, počítadlo tokenů AI, tokeny ChatGPT, tokeny Claude, tokeny Gemini, kalkulačka tokenů LLM, kalkulačka nákladů na API"
   },
   "header": {
-    "title": "AI Token Calculator",
-    "subtitle": "Analyze your texts for AI models",
-    "languageSelector": "Language"
+    "title": "Kalkulačka tokenů AI",
+    "subtitle": "Analyzujte své texty pro modely AI",
+    "languageSelector": "Jazyk"
   },
   "tabs": {
     "text": "Text",
-    "files": "Files"
+    "files": "Soubory"
   },
   "input": {
-    "placeholder": "Paste your text here...",
+    "placeholder": "Vložte svůj text zde...",
     "stats": {
-      "characters": "characters",
-      "words": "words",
-      "tokens": "tokens"
+      "characters": "znaky",
+      "words": "slova",
+      "tokens": "tokeny"
     }
   },
   "fileUpload": {
-    "title": "Drop files here or click to upload",
-    "subtitle": "Supports TXT, MD, PDF, DOCX and images",
-    "processing": "Processing...",
-    "error": "Error processing file",
+    "title": "Přetáhněte soubory sem nebo klikněte pro nahrání",
+    "subtitle": "Podporuje TXT, MD, PDF, DOCX a obrázky",
+    "processing": "Zpracovává se...",
+    "error": "Chyba při zpracování souboru",
     "errors": {
-      "pdfNotSupported": "[CS] Error processing file: PDF not yet supported",
-      "docxNotSupported": "[CS] Error processing file: DOCX not yet supported",
-      "imagesNotSupported": "[CS] Error processing file: Images not yet supported",
-      "fileTypeNotSupported": "[CS] Error processing file: .{fileType} not supported",
-      "processingError": "[CS] Error processing file: {error}"
+      "pdfNotSupported": "Chyba při zpracování souboru: PDF zatím není podporováno",
+      "docxNotSupported": "Chyba při zpracování souboru: DOCX zatím není podporováno",
+      "imagesNotSupported": "Chyba při zpracování souboru: Obrázky zatím nejsou podporovány",
+      "fileTypeNotSupported": "Chyba při zpracování souboru: .{fileType} není podporován",
+      "processingError": "Chyba při zpracování souboru: {error}"
     },
     "types": {
-      "documents": "[CS] Documents",
-      "images": "[CS] Images",
-      "audio": "[CS] Audio (soon)"
+      "documents": "Dokumenty",
+      "images": "Obrázky",
+      "audio": "Audio (brzy)"
     }
   },
   "modelLibrary": {
-    "title": "Model Library",
-    "selectPrompt": "Select the AI models you want to compare:",
-    "button": "Select Models",
-    "activeCount": "{count} active",
-    "search": "Search model...",
+    "title": "Knihovna modelů",
+    "selectPrompt": "Vyberte modely AI, které chcete porovnat:",
+    "button": "Vybrat modely",
+    "activeCount": "{count} aktivních",
+    "search": "Hledat model...",
     "filters": {
-      "allProviders": "All Providers",
-      "allTypes": "All Types",
-      "proprietary": "Proprietary",
-      "openSource": "Open Source"
+      "allProviders": "Všichni poskytovatelé",
+      "allTypes": "Všechny typy",
+      "proprietary": "Proprietární",
+      "openSource": "Otevřený zdroj"
     },
-    "showDeprecated": "Show deprecated models",
-    "noResults": "No models found",
-    "noResultsHint": "Try adjusting your search criteria",
-    "resetDefaults": "Reset to defaults",
-    "selectedCount": "{count} models selected",
-    "done": "Done",
-    "active": "active",
-    "deprecated": "deprecated"
+    "showDeprecated": "Zobrazit zastaralé modely",
+    "noResults": "Nebyly nalezeny žádné modely",
+    "noResultsHint": "Zkuste upravit kritéria vyhledávání",
+    "resetDefaults": "Obnovit výchozí",
+    "selectedCount": "{count} modelů vybráno",
+    "done": "Hotovo",
+    "active": "aktivní",
+    "deprecated": "zastaralý"
   },
   "modelCard": {
-    "tokens": "Tokens",
-    "details": "Details",
-    "contextWindow": "Context Window",
-    "maxOutput": "Max Output",
-    "available": "Available",
-    "estimatedCost": "Estimated Cost",
-    "apiCost": "[CS] API cost",
-    "apiContext": "[CS] API Context",
-    "chatLimit": "[CS] Chat Limit",
-    "pricePerMillion": "[CS] Price per 1M tokens",
-    "features": "[CS] Features",
+    "tokens": "Tokeny",
+    "details": "Podrobnosti",
+    "contextWindow": "Kontextové okno",
+    "maxOutput": "Maximální výstup",
+    "available": "K dispozici",
+    "estimatedCost": "Odhadované náklady",
+    "apiCost": "Náklady na API",
+    "apiContext": "Kontext API",
+    "chatLimit": "Limit chatu",
+    "pricePerMillion": "Cena za 1M tokenů",
+    "features": "Funkce",
     "status": {
-      "fits": "[CS] Plenty of space available",
-      "tight": "[CS] Getting a bit tight",
-      "veryTight": "[CS] Very tight, almost at limit",
-      "exceeds": "[CS] Exceeds by {count} tokens"
+      "fits": "Dostatek volného místa",
+      "tight": "Začíná být trochu těsné",
+      "veryTight": "Velmi těsné, téměř na limitu",
+      "exceeds": "Přesahuje o {count} tokenů"
     }
   },
   "results": {
-    "customize": "Customize Models",
-    "export": "Export as CSV",
-    "comparison": "Comparison Table",
+    "title": "Výsledky analýzy",
+    "customize": "Přizpůsobit modely",
+    "export": "Exportovat jako CSV",
+    "comparison": "Srovnávací tabulka",
     "headers": {
       "model": "Model",
-      "yourTokens": "Your Tokens",
-      "contextWindow": "Context Window",
-      "status": "Status",
-      "cost": "Cost*"
+      "yourTokens": "Vaše tokeny",
+      "contextWindow": "Kontextové okno",
+      "status": "Stav",
+      "cost": "Náklady*"
     },
     "status": {
-      "fits": "✅ Fits",
-      "tight": "⚠️ Tight",
-      "exceeds": "❌ Too large"
+      "fits": "✅ Vejde se",
+      "tight": "⚠️ Těsné",
+      "exceeds": "❌ Příliš velké"
     },
-    "costNote": "* Estimated API costs based on public prices (input tokens only)",
-    "title": "[CS] Analysis Results"
+    "costNote": "* Odhadované náklady na API na základě veřejných cen (pouze vstupní tokeny)"
   },
   "info": {
-    "title": "What are tokens?",
-    "description": "Language models like Gemini or ChatGPT don't read words, but \"tokens\". A token is often just part of a word. The exact conversion varies from model to model. This calculator gives you an estimate for the most popular models.",
+    "title": "Co jsou tokeny?",
+    "description": "Jazykové modely jako Gemini nebo ChatGPT nečtou slova, ale \"tokeny\". Token je často jen část slova. Přesný převod se liší model od modelu. Tato kalkulačka vám poskytne odhad pro nejoblíbenější modely.",
     "rules": {
-      "title": "Rule of thumb",
-      "token": "1 token ≈ 4 characters",
-      "words": "100 tokens ≈ 75 words"
+      "title": "Pravidlo palce",
+      "token": "1 token ≈ 4 znaky",
+      "words": "100 tokenů ≈ 75 slov"
     },
     "languages": {
-      "title": "English text",
-      "description": "Most efficient tokenization",
-      "note": "baseline for calculations"
+      "title": "Český text",
+      "description": "Vyžaduje ~20% více tokenů",
+      "note": "kvůli delším slovům a diakritice"
     },
     "multimodal": {
-      "title": "Multimodal",
-      "images": "Images: ~200-800 tokens",
-      "audio": "Audio: ~32 tokens/second"
+      "title": "Multimodální",
+      "images": "Obrázky: ~200-800 tokenů",
+      "audio": "Audio: ~32 tokenů/sekundu"
     }
   },
   "status": {
-    "fits": "✅ Great! Plenty of space available.",
-    "tight": "⚠️ Still fits, but getting tight.",
-    "veryTight": "⚠️ Very tight! Almost at limit.",
-    "exceeds": "❌ Too large! Exceeds by {count} tokens."
+    "fits": "✅ Skvělé! Dostatek volného místa.",
+    "tight": "⚠️ Stále se vejde, ale začíná to být těsné.",
+    "veryTight": "⚠️ Velmi těsné! Téměř na limitu.",
+    "exceeds": "❌ Příliš velké! Přesahuje o {count} tokenů."
   },
   "providers": {
     "Google": "Google",
@@ -136,22 +136,22 @@
     "Aleph Alpha": "Aleph Alpha"
   },
   "footer": {
-    "madeWith": "[CS] Made with",
-    "by": "[CS] by"
+    "madeWith": "Vytvořeno s",
+    "by": "od"
   },
   "models": {
     "gpt-4o": {
-      "description": "Most advanced model from OpenAI with multimodal capabilities.",
+      "description": "Nejpokročilejší model od OpenAI s multimodálními schopnostmi.",
       "features": [
-        "Multimodal",
-        "Vision"
+        "Multimodální",
+        "Vize"
       ]
     },
     "gpt-4-turbo": {
-      "description": "Powerful and fast model for complex tasks.",
+      "description": "Výkonný a rychlý model pro složité úkoly.",
       "features": [
-        "JSON Mode",
-        "Function Calling"
+        "Režim JSON",
+        "Volání funkcí"
       ]
     }
   }

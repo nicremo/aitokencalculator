@@ -1,127 +1,127 @@
 {
   "metadata": {
-    "title": "AI Token Calculator - Count Tokens for ChatGPT, Claude & Gemini",
-    "description": "Free online token calculator for AI models. Check if your text fits in GPT-4, Claude, Gemini context windows. Estimate API costs instantly.",
-    "keywords": "token calculator, AI token counter, ChatGPT tokens, Claude tokens, Gemini tokens, LLM token calculator, API cost calculator"
+    "title": "Calculadora de Tokens de IA - Conte Tokens para ChatGPT, Claude e Gemini",
+    "description": "Calculadora de tokens online gratuita para modelos de IA. Verifique se o seu texto cabe nas janelas de contexto do GPT-4, Claude, Gemini. Estime os custos da API instantaneamente.",
+    "keywords": "calculadora de tokens, contador de tokens de IA, tokens ChatGPT, tokens Claude, tokens Gemini, calculadora de tokens LLM, calculadora de custos de API"
   },
   "header": {
-    "title": "AI Token Calculator",
-    "subtitle": "Analyze your texts for AI models",
-    "languageSelector": "Language"
+    "title": "Calculadora de Tokens de IA",
+    "subtitle": "Analise seus textos para modelos de IA",
+    "languageSelector": "Idioma"
   },
   "tabs": {
-    "text": "Text",
-    "files": "Files"
+    "text": "Texto",
+    "files": "Ficheiros"
   },
   "input": {
-    "placeholder": "Paste your text here...",
+    "placeholder": "Cole seu texto aqui...",
     "stats": {
-      "characters": "characters",
-      "words": "words",
+      "characters": "caracteres",
+      "words": "palavras",
       "tokens": "tokens"
     }
   },
   "fileUpload": {
-    "title": "Drop files here or click to upload",
-    "subtitle": "Supports TXT, MD, PDF, DOCX and images",
-    "processing": "Processing...",
-    "error": "Error processing file",
+    "title": "Arraste os ficheiros para aqui ou clique para carregar",
+    "subtitle": "Suporta TXT, MD, PDF, DOCX e imagens",
+    "processing": "A processar...",
+    "error": "Erro ao processar o ficheiro",
     "errors": {
-      "pdfNotSupported": "[PT] Error processing file: PDF not yet supported",
-      "docxNotSupported": "[PT] Error processing file: DOCX not yet supported",
-      "imagesNotSupported": "[PT] Error processing file: Images not yet supported",
-      "fileTypeNotSupported": "[PT] Error processing file: .{fileType} not supported",
-      "processingError": "[PT] Error processing file: {error}"
+      "pdfNotSupported": "Erro ao processar o ficheiro: PDF ainda não suportado",
+      "docxNotSupported": "Erro ao processar o ficheiro: DOCX ainda não suportado",
+      "imagesNotSupported": "Erro ao processar o ficheiro: Imagens ainda não suportadas",
+      "fileTypeNotSupported": "Erro ao processar o ficheiro: .{fileType} não suportado",
+      "processingError": "Erro ao processar o ficheiro: {error}"
     },
     "types": {
-      "documents": "[PT] Documents",
-      "images": "[PT] Images",
-      "audio": "[PT] Audio (soon)"
+      "documents": "Documentos",
+      "images": "Imagens",
+      "audio": "Áudio (em breve)"
     }
   },
   "modelLibrary": {
-    "title": "Model Library",
-    "selectPrompt": "Select the AI models you want to compare:",
-    "button": "Select Models",
-    "activeCount": "{count} active",
-    "search": "Search model...",
+    "title": "Biblioteca de Modelos",
+    "selectPrompt": "Selecione os modelos de IA que você deseja comparar:",
+    "button": "Selecionar Modelos",
+    "activeCount": "{count} ativos",
+    "search": "Procurar modelo...",
     "filters": {
-      "allProviders": "All Providers",
-      "allTypes": "All Types",
-      "proprietary": "Proprietary",
-      "openSource": "Open Source"
+      "allProviders": "Todos os Fornecedores",
+      "allTypes": "Todos os Tipos",
+      "proprietary": "Proprietário",
+      "openSource": "Código Aberto"
     },
-    "showDeprecated": "Show deprecated models",
-    "noResults": "No models found",
-    "noResultsHint": "Try adjusting your search criteria",
-    "resetDefaults": "Reset to defaults",
-    "selectedCount": "{count} models selected",
-    "done": "Done",
-    "active": "active",
-    "deprecated": "deprecated"
+    "showDeprecated": "Mostrar modelos obsoletos",
+    "noResults": "Nenhum modelo encontrado",
+    "noResultsHint": "Tente ajustar seus critérios de pesquisa",
+    "resetDefaults": "Redefinir para padrões",
+    "selectedCount": "{count} modelos selecionados",
+    "done": "Feito",
+    "active": "ativo",
+    "deprecated": "obsoleto"
   },
   "modelCard": {
     "tokens": "Tokens",
-    "details": "Details",
-    "contextWindow": "Context Window",
-    "maxOutput": "Max Output",
-    "available": "Available",
-    "estimatedCost": "Estimated Cost",
-    "apiCost": "[PT] API cost",
-    "apiContext": "[PT] API Context",
-    "chatLimit": "[PT] Chat Limit",
-    "pricePerMillion": "[PT] Price per 1M tokens",
-    "features": "[PT] Features",
+    "details": "Detalhes",
+    "contextWindow": "Janela de Contexto",
+    "maxOutput": "Saída Máxima",
+    "available": "Disponível",
+    "estimatedCost": "Custo Estimado",
+    "apiCost": "Custo da API",
+    "apiContext": "Contexto da API",
+    "chatLimit": "Limite de Chat",
+    "pricePerMillion": "Preço por 1M de tokens",
+    "features": "Recursos",
     "status": {
-      "fits": "[PT] Plenty of space available",
-      "tight": "[PT] Getting a bit tight",
-      "veryTight": "[PT] Very tight, almost at limit",
-      "exceeds": "[PT] Exceeds by {count} tokens"
+      "fits": "Muito espaço disponível",
+      "tight": "A ficar um pouco apertado",
+      "veryTight": "Muito apertado, quase no limite",
+      "exceeds": "Excede em {count} tokens"
     }
   },
   "results": {
-    "customize": "Customize Models",
-    "export": "Export as CSV",
-    "comparison": "Comparison Table",
+    "title": "Resultados da Análise",
+    "customize": "Personalizar Modelos",
+    "export": "Exportar como CSV",
+    "comparison": "Tabela de Comparação",
     "headers": {
-      "model": "Model",
-      "yourTokens": "Your Tokens",
-      "contextWindow": "Context Window",
+      "model": "Modelo",
+      "yourTokens": "Seus Tokens",
+      "contextWindow": "Janela de Contexto",
       "status": "Status",
-      "cost": "Cost*"
+      "cost": "Custo*"
     },
     "status": {
-      "fits": "✅ Fits",
-      "tight": "⚠️ Tight",
-      "exceeds": "❌ Too large"
+      "fits": "✅ Cabe",
+      "tight": "⚠️ Apertado",
+      "exceeds": "❌ Muito grande"
     },
-    "costNote": "* Estimated API costs based on public prices (input tokens only)",
-    "title": "[PT] Analysis Results"
+    "costNote": "* Custos de API estimados com base nos preços públicos (apenas tokens de entrada)"
   },
   "info": {
-    "title": "What are tokens?",
-    "description": "Language models like Gemini or ChatGPT don't read words, but \"tokens\". A token is often just part of a word. The exact conversion varies from model to model. This calculator gives you an estimate for the most popular models.",
+    "title": "O que são tokens?",
+    "description": "Modelos de linguagem como Gemini ou ChatGPT não leem palavras, mas \"tokens\". Um token é muitas vezes apenas parte de uma palavra. A conversão exata varia de modelo para modelo. Esta calculadora fornece uma estimativa para os modelos mais populares.",
     "rules": {
-      "title": "Rule of thumb",
-      "token": "1 token ≈ 4 characters",
-      "words": "100 tokens ≈ 75 words"
+      "title": "Regra geral",
+      "token": "1 token ≈ 4 caracteres",
+      "words": "100 tokens ≈ 75 palavras"
     },
     "languages": {
-      "title": "English text",
-      "description": "Most efficient tokenization",
-      "note": "baseline for calculations"
+      "title": "Texto em português",
+      "description": "Requer ~10% mais tokens",
+      "note": "devido a palavras mais longas"
     },
     "multimodal": {
       "title": "Multimodal",
-      "images": "Images: ~200-800 tokens",
-      "audio": "Audio: ~32 tokens/second"
+      "images": "Imagens: ~200-800 tokens",
+      "audio": "Áudio: ~32 tokens/segundo"
     }
   },
   "status": {
-    "fits": "✅ Great! Plenty of space available.",
-    "tight": "⚠️ Still fits, but getting tight.",
-    "veryTight": "⚠️ Very tight! Almost at limit.",
-    "exceeds": "❌ Too large! Exceeds by {count} tokens."
+    "fits": "✅ Ótimo! Muito espaço disponível.",
+    "tight": "⚠️ Ainda cabe, mas está a ficar apertado.",
+    "veryTight": "⚠️ Muito apertado! Quase no limite.",
+    "exceeds": "❌ Muito grande! Excede em {count} tokens."
   },
   "providers": {
     "Google": "Google",
@@ -136,22 +136,22 @@
     "Aleph Alpha": "Aleph Alpha"
   },
   "footer": {
-    "madeWith": "[PT] Made with",
-    "by": "[PT] by"
+    "madeWith": "Feito com",
+    "by": "por"
   },
   "models": {
     "gpt-4o": {
-      "description": "Most advanced model from OpenAI with multimodal capabilities.",
+      "description": "O modelo mais avançado da OpenAI com capacidades multimodais.",
       "features": [
         "Multimodal",
-        "Vision"
+        "Visão"
       ]
     },
     "gpt-4-turbo": {
-      "description": "Powerful and fast model for complex tasks.",
+      "description": "Modelo poderoso e rápido para tarefas complexas.",
       "features": [
-        "JSON Mode",
-        "Function Calling"
+        "Modo JSON",
+        "Chamada de função"
       ]
     }
   }

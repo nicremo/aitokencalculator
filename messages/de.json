@@ -136,22 +136,22 @@
     "Aleph Alpha": "Aleph Alpha"
   },
   "footer": {
-    "madeWith": "Made with",
-    "by": "by"
+    "madeWith": "Erstellt mit",
+    "by": "von"
   },
   "models": {
     "gpt-4o": {
-      "description": "Most advanced model from OpenAI with multimodal capabilities.",
+      "description": "Das fortschrittlichste Modell von OpenAI mit multimodalen Fähigkeiten.",
       "features": [
         "Multimodal",
         "Vision"
       ]
     },
     "gpt-4-turbo": {
-      "description": "Powerful and fast model for complex tasks.",
+      "description": "Leistungsstarkes und schnelles Modell für komplexe Aufgaben.",
       "features": [
-        "JSON Mode",
-        "Function Calling"
+        "JSON-Modus",
+        "Funktionsaufrufe"
       ]
     }
   }

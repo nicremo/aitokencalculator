@@ -1,127 +1,127 @@
 {
   "metadata": {
-    "title": "AI Token Calculator - Count Tokens for ChatGPT, Claude & Gemini",
-    "description": "Free online token calculator for AI models. Check if your text fits in GPT-4, Claude, Gemini context windows. Estimate API costs instantly.",
-    "keywords": "token calculator, AI token counter, ChatGPT tokens, Claude tokens, Gemini tokens, LLM token calculator, API cost calculator"
+    "title": "AI-tokenilaskin - Laske tokenit ChatGPT:lle, Claudelle ja Geminille",
+    "description": "Ilmainen online-tokenilaskin tekoälymalleille. Tarkista, mahtuuko tekstisi GPT-4, Claude, Gemini -konteksti-ikkunoihin. Arvioi API-kustannukset välittömästi.",
+    "keywords": "tokenilaskin, tekoälytokenilaskin, ChatGPT-tokenit, Claude-tokenit, Gemini-tokenit, LLM-tokenilaskin, API-kustannuslaskin"
   },
   "header": {
-    "title": "AI Token Calculator",
-    "subtitle": "Analyze your texts for AI models",
-    "languageSelector": "Language"
+    "title": "AI-tokenilaskin",
+    "subtitle": "Analysoi tekstisi tekoälymalleille",
+    "languageSelector": "Kieli"
   },
   "tabs": {
-    "text": "Text",
-    "files": "Files"
+    "text": "Teksti",
+    "files": "Tiedostot"
   },
   "input": {
-    "placeholder": "Paste your text here...",
+    "placeholder": "Liitä tekstisi tähän...",
     "stats": {
-      "characters": "characters",
-      "words": "words",
-      "tokens": "tokens"
+      "characters": "merkit",
+      "words": "sanat",
+      "tokens": "tokenit"
     }
   },
   "fileUpload": {
-    "title": "Drop files here or click to upload",
-    "subtitle": "Supports TXT, MD, PDF, DOCX and images",
-    "processing": "Processing...",
-    "error": "Error processing file",
+    "title": "Pudota tiedostot tähän tai napsauta ladataksesi",
+    "subtitle": "Tukee TXT-, MD-, PDF-, DOCX-tiedostoja ja kuvia",
+    "processing": "Käsitellään...",
+    "error": "Virhe tiedoston käsittelyssä",
     "errors": {
-      "pdfNotSupported": "[FI] Error processing file: PDF not yet supported",
-      "docxNotSupported": "[FI] Error processing file: DOCX not yet supported",
-      "imagesNotSupported": "[FI] Error processing file: Images not yet supported",
-      "fileTypeNotSupported": "[FI] Error processing file: .{fileType} not supported",
-      "processingError": "[FI] Error processing file: {error}"
+      "pdfNotSupported": "Virhe tiedoston käsittelyssä: PDF ei vielä tuettu",
+      "docxNotSupported": "Virhe tiedoston käsittelyssä: DOCX ei vielä tuettu",
+      "imagesNotSupported": "Virhe tiedoston käsittelyssä: Kuvat eivät vielä tuettu",
+      "fileTypeNotSupported": "Virhe tiedoston käsittelyssä: .{fileType} ei tuettu",
+      "processingError": "Virhe tiedoston käsittelyssä: {error}"
     },
     "types": {
-      "documents": "[FI] Documents",
-      "images": "[FI] Images",
-      "audio": "[FI] Audio (soon)"
+      "documents": "Asiakirjat",
+      "images": "Kuvat",
+      "audio": "Ääni (tulossa pian)"
     }
   },
   "modelLibrary": {
-    "title": "Model Library",
-    "selectPrompt": "Select the AI models you want to compare:",
-    "button": "Select Models",
-    "activeCount": "{count} active",
-    "search": "Search model...",
+    "title": "Mallikirjasto",
+    "selectPrompt": "Valitse tekoälymallit, joita haluat verrata:",
+    "button": "Valitse mallit",
+    "activeCount": "{count} aktiivista",
+    "search": "Hae mallia...",
     "filters": {
-      "allProviders": "All Providers",
-      "allTypes": "All Types",
-      "proprietary": "Proprietary",
-      "openSource": "Open Source"
+      "allProviders": "Kaikki palveluntarjoajat",
+      "allTypes": "Kaikki tyypit",
+      "proprietary": "Omistusoikeudellinen",
+      "openSource": "Avoin lähdekoodi"
     },
-    "showDeprecated": "Show deprecated models",
-    "noResults": "No models found",
-    "noResultsHint": "Try adjusting your search criteria",
-    "resetDefaults": "Reset to defaults",
-    "selectedCount": "{count} models selected",
-    "done": "Done",
-    "active": "active",
-    "deprecated": "deprecated"
+    "showDeprecated": "Näytä vanhentuneet mallit",
+    "noResults": "Malleja ei löytynyt",
+    "noResultsHint": "Yritä muuttaa hakuehtojasi",
+    "resetDefaults": "Palauta oletusasetukset",
+    "selectedCount": "{count} mallia valittu",
+    "done": "Valmis",
+    "active": "aktiivinen",
+    "deprecated": "vanhentunut"
   },
   "modelCard": {
-    "tokens": "Tokens",
-    "details": "Details",
-    "contextWindow": "Context Window",
-    "maxOutput": "Max Output",
-    "available": "Available",
-    "estimatedCost": "Estimated Cost",
-    "apiCost": "[FI] API cost",
-    "apiContext": "[FI] API Context",
-    "chatLimit": "[FI] Chat Limit",
-    "pricePerMillion": "[FI] Price per 1M tokens",
-    "features": "[FI] Features",
+    "tokens": "Tokenit",
+    "details": "Tiedot",
+    "contextWindow": "Konteksti-ikkuna",
+    "maxOutput": "Maksimi ulostulo",
+    "available": "Saatavilla",
+    "estimatedCost": "Arvioitu kustannus",
+    "apiCost": "API-kustannus",
+    "apiContext": "API-konteksti",
+    "chatLimit": "Chat-raja",
+    "pricePerMillion": "Hinta per 1M tokenia",
+    "features": "Ominaisuudet",
     "status": {
-      "fits": "[FI] Plenty of space available",
-      "tight": "[FI] Getting a bit tight",
-      "veryTight": "[FI] Very tight, almost at limit",
-      "exceeds": "[FI] Exceeds by {count} tokens"
+      "fits": "Paljon tilaa käytettävissä",
+      "tight": "Alkaa olla hieman tiukkaa",
+      "veryTight": "Erittäin tiukkaa, melkein rajalla",
+      "exceeds": "Ylittää {count} tokenilla"
     }
   },
   "results": {
-    "customize": "Customize Models",
-    "export": "Export as CSV",
-    "comparison": "Comparison Table",
+    "title": "Analyysitulokset",
+    "customize": "Mukauta malleja",
+    "export": "Vie CSV:nä",
+    "comparison": "Vertailutaulukko",
     "headers": {
-      "model": "Model",
-      "yourTokens": "Your Tokens",
-      "contextWindow": "Context Window",
-      "status": "Status",
-      "cost": "Cost*"
+      "model": "Malli",
+      "yourTokens": "Tokenisi",
+      "contextWindow": "Konteksti-ikkuna",
+      "status": "Tila",
+      "cost": "Kustannus*"
     },
     "status": {
-      "fits": "✅ Fits",
-      "tight": "⚠️ Tight",
-      "exceeds": "❌ Too large"
+      "fits": "✅ Mahtuu",
+      "tight": "⚠️ Tiukka",
+      "exceeds": "❌ Liian suuri"
     },
-    "costNote": "* Estimated API costs based on public prices (input tokens only)",
-    "title": "[FI] Analysis Results"
+    "costNote": "* Arvioidut API-kustannukset perustuvat julkisiin hintoihin (vain syöttötokenit)"
   },
   "info": {
-    "title": "What are tokens?",
-    "description": "Language models like Gemini or ChatGPT don't read words, but \"tokens\". A token is often just part of a word. The exact conversion varies from model to model. This calculator gives you an estimate for the most popular models.",
+    "title": "Mitä ovat tokenit?",
+    "description": "Kielimallit, kuten Gemini tai ChatGPT, eivät lue sanoja, vaan \"tokeneita\". Tokeni on usein vain osa sanaa. Tarkka muunnos vaihtelee mallista toiseen. Tämä laskin antaa sinulle arvion suosituimmista malleista.",
     "rules": {
-      "title": "Rule of thumb",
-      "token": "1 token ≈ 4 characters",
-      "words": "100 tokens ≈ 75 words"
+      "title": "Nyrkkisääntö",
+      "token": "1 token ≈ 4 merkkiä",
+      "words": "100 tokenia ≈ 75 sanaa"
     },
     "languages": {
-      "title": "English text",
-      "description": "Most efficient tokenization",
-      "note": "baseline for calculations"
+      "title": "Suomenkielinen teksti",
+      "description": "Vaatii ~15% enemmän tokeneita",
+      "note": "pidempien sanojen vuoksi"
     },
     "multimodal": {
-      "title": "Multimodal",
-      "images": "Images: ~200-800 tokens",
-      "audio": "Audio: ~32 tokens/second"
+      "title": "Monimodaalinen",
+      "images": "Kuvat: ~200-800 tokenia",
+      "audio": "Ääni: ~32 tokenia/sekunti"
     }
   },
   "status": {
-    "fits": "✅ Great! Plenty of space available.",
-    "tight": "⚠️ Still fits, but getting tight.",
-    "veryTight": "⚠️ Very tight! Almost at limit.",
-    "exceeds": "❌ Too large! Exceeds by {count} tokens."
+    "fits": "✅ Erinomainen! Paljon tilaa käytettävissä.",
+    "tight": "⚠️ Mahtuu vielä, mutta alkaa olla tiukkaa.",
+    "veryTight": "⚠️ Erittäin tiukkaa! Melkein rajalla.",
+    "exceeds": "❌ Liian suuri! Ylittää {count} tokenilla."
   },
   "providers": {
     "Google": "Google",
@@ -136,22 +136,22 @@
     "Aleph Alpha": "Aleph Alpha"
   },
   "footer": {
-    "madeWith": "[FI] Made with",
-    "by": "[FI] by"
+    "madeWith": "Tehty",
+    "by": "tekijä"
   },
   "models": {
     "gpt-4o": {
-      "description": "Most advanced model from OpenAI with multimodal capabilities.",
+      "description": "OpenAI:n edistynein malli monimodaalisilla ominaisuuksilla.",
       "features": [
-        "Multimodal",
-        "Vision"
+        "Monimodaalinen",
+        "Näkö"
       ]
     },
     "gpt-4-turbo": {
-      "description": "Powerful and fast model for complex tasks.",
+      "description": "Tehokas ja nopea malli monimutkaisiin tehtäviin.",
       "features": [
-        "JSON Mode",
-        "Function Calling"
+        "JSON-tila",
+        "Funktiokutsut"
       ]
     }
   }

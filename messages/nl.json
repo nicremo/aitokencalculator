@@ -1,127 +1,127 @@
 {
   "metadata": {
-    "title": "AI Token Calculator - Count Tokens for ChatGPT, Claude & Gemini",
-    "description": "Free online token calculator for AI models. Check if your text fits in GPT-4, Claude, Gemini context windows. Estimate API costs instantly.",
-    "keywords": "token calculator, AI token counter, ChatGPT tokens, Claude tokens, Gemini tokens, LLM token calculator, API cost calculator"
+    "title": "AI Token Calculator - Tel Tokens voor ChatGPT, Claude & Gemini",
+    "description": "Gratis online token calculator voor AI-modellen. Controleer of uw tekst past in GPT-4, Claude, Gemini contextvensters. Schat API-kosten direct.",
+    "keywords": "token calculator, AI token teller, ChatGPT tokens, Claude tokens, Gemini tokens, LLM token calculator, API kosten calculator"
   },
   "header": {
     "title": "AI Token Calculator",
-    "subtitle": "Analyze your texts for AI models",
-    "languageSelector": "Language"
+    "subtitle": "Analyseer uw teksten voor AI-modellen",
+    "languageSelector": "Taal"
   },
   "tabs": {
-    "text": "Text",
-    "files": "Files"
+    "text": "Tekst",
+    "files": "Bestanden"
   },
   "input": {
-    "placeholder": "Paste your text here...",
+    "placeholder": "Plak hier uw tekst...",
     "stats": {
-      "characters": "characters",
-      "words": "words",
+      "characters": "tekens",
+      "words": "woorden",
       "tokens": "tokens"
     }
   },
   "fileUpload": {
-    "title": "Drop files here or click to upload",
-    "subtitle": "Supports TXT, MD, PDF, DOCX and images",
-    "processing": "Processing...",
-    "error": "Error processing file",
+    "title": "Sleep bestanden hierheen of klik om te uploaden",
+    "subtitle": "Ondersteunt TXT, MD, PDF, DOCX en afbeeldingen",
+    "processing": "Verwerken...",
+    "error": "Fout bij het verwerken van het bestand",
     "errors": {
-      "pdfNotSupported": "[NL] Error processing file: PDF not yet supported",
-      "docxNotSupported": "[NL] Error processing file: DOCX not yet supported",
-      "imagesNotSupported": "[NL] Error processing file: Images not yet supported",
-      "fileTypeNotSupported": "[NL] Error processing file: .{fileType} not supported",
-      "processingError": "[NL] Error processing file: {error}"
+      "pdfNotSupported": "Fout bij het verwerken van het bestand: PDF nog niet ondersteund",
+      "docxNotSupported": "Fout bij het verwerken van het bestand: DOCX nog niet ondersteund",
+      "imagesNotSupported": "Fout bij het verwerken van het bestand: Afbeeldingen nog niet ondersteund",
+      "fileTypeNotSupported": "Fout bij het verwerken van het bestand: .{fileType} niet ondersteund",
+      "processingError": "Fout bij het verwerken van het bestand: {error}"
     },
     "types": {
-      "documents": "[NL] Documents",
-      "images": "[NL] Images",
-      "audio": "[NL] Audio (soon)"
+      "documents": "Documenten",
+      "images": "Afbeeldingen",
+      "audio": "Audio (binnenkort)"
     }
   },
   "modelLibrary": {
-    "title": "Model Library",
-    "selectPrompt": "Select the AI models you want to compare:",
-    "button": "Select Models",
-    "activeCount": "{count} active",
-    "search": "Search model...",
+    "title": "Modellenbibliotheek",
+    "selectPrompt": "Selecteer de AI-modellen die u wilt vergelijken:",
+    "button": "Modellen selecteren",
+    "activeCount": "{count} actief",
+    "search": "Zoek model...",
     "filters": {
-      "allProviders": "All Providers",
-      "allTypes": "All Types",
-      "proprietary": "Proprietary",
+      "allProviders": "Alle Providers",
+      "allTypes": "Alle Typen",
+      "proprietary": "Eigendom",
       "openSource": "Open Source"
     },
-    "showDeprecated": "Show deprecated models",
-    "noResults": "No models found",
-    "noResultsHint": "Try adjusting your search criteria",
-    "resetDefaults": "Reset to defaults",
-    "selectedCount": "{count} models selected",
-    "done": "Done",
-    "active": "active",
-    "deprecated": "deprecated"
+    "showDeprecated": "Toon verouderde modellen",
+    "noResults": "Geen modellen gevonden",
+    "noResultsHint": "Probeer uw zoekcriteria aan te passen",
+    "resetDefaults": "Terug naar standaard",
+    "selectedCount": "{count} modellen geselecteerd",
+    "done": "Klaar",
+    "active": "actief",
+    "deprecated": "verouderd"
   },
   "modelCard": {
     "tokens": "Tokens",
     "details": "Details",
-    "contextWindow": "Context Window",
-    "maxOutput": "Max Output",
-    "available": "Available",
-    "estimatedCost": "Estimated Cost",
-    "apiCost": "[NL] API cost",
-    "apiContext": "[NL] API Context",
-    "chatLimit": "[NL] Chat Limit",
-    "pricePerMillion": "[NL] Price per 1M tokens",
-    "features": "[NL] Features",
+    "contextWindow": "Contextvenster",
+    "maxOutput": "Max. Output",
+    "available": "Beschikbaar",
+    "estimatedCost": "Geschatte kosten",
+    "apiCost": "API-kosten",
+    "apiContext": "API-context",
+    "chatLimit": "Chatlimiet",
+    "pricePerMillion": "Prijs per 1M tokens",
+    "features": "Functies",
     "status": {
-      "fits": "[NL] Plenty of space available",
-      "tight": "[NL] Getting a bit tight",
-      "veryTight": "[NL] Very tight, almost at limit",
-      "exceeds": "[NL] Exceeds by {count} tokens"
+      "fits": "Ruim voldoende ruimte beschikbaar",
+      "tight": "Wordt een beetje krap",
+      "veryTight": "Erg krap, bijna op de limiet",
+      "exceeds": "Overschrijdt met {count} tokens"
     }
   },
   "results": {
-    "customize": "Customize Models",
-    "export": "Export as CSV",
-    "comparison": "Comparison Table",
+    "title": "Analyseresultaten",
+    "customize": "Modellen aanpassen",
+    "export": "Exporteren als CSV",
+    "comparison": "Vergelijkingstabel",
     "headers": {
       "model": "Model",
-      "yourTokens": "Your Tokens",
-      "contextWindow": "Context Window",
+      "yourTokens": "Uw Tokens",
+      "contextWindow": "Contextvenster",
       "status": "Status",
-      "cost": "Cost*"
+      "cost": "Kosten*"
     },
     "status": {
-      "fits": "✅ Fits",
-      "tight": "⚠️ Tight",
-      "exceeds": "❌ Too large"
+      "fits": "✅ Past",
+      "tight": "⚠️ Krap",
+      "exceeds": "❌ Te groot"
     },
-    "costNote": "* Estimated API costs based on public prices (input tokens only)",
-    "title": "[NL] Analysis Results"
+    "costNote": "* Geschatte API-kosten op basis van openbare prijzen (alleen invoertokens)"
   },
   "info": {
-    "title": "What are tokens?",
-    "description": "Language models like Gemini or ChatGPT don't read words, but \"tokens\". A token is often just part of a word. The exact conversion varies from model to model. This calculator gives you an estimate for the most popular models.",
+    "title": "Wat zijn tokens?",
+    "description": "Taalmodellen zoals Gemini of ChatGPT lezen geen woorden, maar \"tokens\". Een token is vaak slechts een deel van een woord. De exacte conversie varieert van model tot model. Deze calculator geeft u een schatting voor de meest populaire modellen.",
     "rules": {
-      "title": "Rule of thumb",
-      "token": "1 token ≈ 4 characters",
-      "words": "100 tokens ≈ 75 words"
+      "title": "Vuistregel",
+      "token": "1 token ≈ 4 tekens",
+      "words": "100 tokens ≈ 75 woorden"
     },
     "languages": {
-      "title": "English text",
-      "description": "Most efficient tokenization",
-      "note": "baseline for calculations"
+      "title": "Nederlandse tekst",
+      "description": "Vereist ~10% meer tokens",
+      "note": "vanwege langere woorden"
     },
     "multimodal": {
-      "title": "Multimodal",
-      "images": "Images: ~200-800 tokens",
-      "audio": "Audio: ~32 tokens/second"
+      "title": "Multimodaal",
+      "images": "Afbeeldingen: ~200-800 tokens",
+      "audio": "Audio: ~32 tokens/seconde"
     }
   },
   "status": {
-    "fits": "✅ Great! Plenty of space available.",
-    "tight": "⚠️ Still fits, but getting tight.",
-    "veryTight": "⚠️ Very tight! Almost at limit.",
-    "exceeds": "❌ Too large! Exceeds by {count} tokens."
+    "fits": "✅ Geweldig! Ruim voldoende ruimte beschikbaar.",
+    "tight": "⚠️ Past nog, maar wordt krap.",
+    "veryTight": "⚠️ Erg krap! Bijna op de limiet.",
+    "exceeds": "❌ Te groot! Overschrijdt met {count} tokens."
   },
   "providers": {
     "Google": "Google",
@@ -136,22 +136,22 @@
     "Aleph Alpha": "Aleph Alpha"
   },
   "footer": {
-    "madeWith": "[NL] Made with",
-    "by": "[NL] by"
+    "madeWith": "Gemaakt met",
+    "by": "door"
   },
   "models": {
     "gpt-4o": {
-      "description": "Most advanced model from OpenAI with multimodal capabilities.",
+      "description": "Het meest geavanceerde model van OpenAI met multimodale mogelijkheden.",
       "features": [
-        "Multimodal",
-        "Vision"
+        "Multimodaal",
+        "Visie"
       ]
     },
     "gpt-4-turbo": {
-      "description": "Powerful and fast model for complex tasks.",
+      "description": "Krachtig en snel model voor complexe taken.",
       "features": [
-        "JSON Mode",
-        "Function Calling"
+        "JSON-modus",
+        "Functieaanroep"
       ]
     }
   }
