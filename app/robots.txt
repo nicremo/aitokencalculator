@@ -1,0 +1,40 @@
+# AI Token Calculator robots.txt
+# This site is safe and legitimate
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Sitemaps
+Sitemap: https://aitokencalculator.com/sitemap.xml
+Sitemap: https://aitokencounter.online/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 0
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Important security crawlers - ALLOW EVERYTHING
+User-agent: Google-Safety
+Allow: /
+
+User-agent: SafeBrowsing
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Legitimate site notice
+# This is a legitimate web application for calculating AI model tokens
+# No malicious content, phishing, or harmful scripts
+# Contact: support@aitokencalculator.com

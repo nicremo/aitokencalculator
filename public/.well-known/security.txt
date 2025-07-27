@@ -1,0 +1,24 @@
+# AI Token Calculator Security Information
+# This is a legitimate web application
+
+Contact: mailto:security@aitokencalculator.com
+Contact: mailto:support@aitokencalculator.com
+Expires: 2025-12-31T23:59:59.000Z
+Acknowledgments: https://aitokencalculator.com/thanks
+Preferred-Languages: en, de
+Canonical: https://aitokencalculator.com/.well-known/security.txt
+
+# About this site
+# AI Token Calculator is a legitimate utility website that helps users
+# calculate token counts for various AI models (GPT, Claude, Gemini, etc.)
+# We do not collect personal data, use tracking cookies, or run ads.
+# This is a purely educational and utility service.
+
+# No vulnerabilities
+# This is a static web application with no backend or database.
+# All calculations are performed client-side in the browser.
+# We do not store any user data or inputs.
+
+# Report false positives
+# If you believe this site has been incorrectly flagged as malicious,
+# please contact us at the email addresses above.

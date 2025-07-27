@@ -1,0 +1,37 @@
+# AI Token Calculator - Legal Disclaimer
+
+## Website Purpose
+AI Token Calculator (aitokencalculator.com / aitokencounter.online) is a legitimate educational and utility website designed to help users calculate token counts for various AI language models.
+
+## No Malicious Content
+This website:
+- Does NOT contain malware, viruses, or harmful code
+- Does NOT engage in phishing or data theft
+- Does NOT track users or collect personal information
+- Does NOT display advertisements
+- Does NOT use cookies for tracking
+- Does NOT redirect to malicious sites
+
+## Service Description
+We provide a FREE service that:
+- Calculates token counts for AI models (GPT, Claude, Gemini, etc.)
+- Estimates API costs for various AI services
+- Helps users understand AI model context limitations
+- Operates entirely client-side (no server processing of user data)
+
+## False Positive Notice
+If you are seeing security warnings about this site, they are FALSE POSITIVES. This may occur due to:
+- Previous domain ownership (domain history)
+- Automated security scanners misidentifying legitimate content
+- Keywords related to "tokens" being misinterpreted as cryptocurrency scams
+
+## Contact Information
+If you have concerns or need to verify the legitimacy of this site:
+Email: support@aitokencalculator.com
+Website: https://aitokencalculator.com
+
+## Legal
+This website complies with all applicable laws and regulations.
+We respect user privacy and do not engage in any deceptive practices.
+
+Last Updated: January 2025

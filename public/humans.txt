@@ -1,0 +1,30 @@
+# AI Token Calculator - Humans.txt
+# The humans behind this project
+
+/* TEAM */
+Creator: AI Token Calculator Team
+Site: https://aitokencalculator.com
+Email: support@aitokencalculator.com
+Location: Global
+
+/* THANKS */
+Thanks to all the open source contributors
+
+/* SITE */
+Last update: 2025/01/01
+Standards: HTML5, CSS3, ES6+
+Components: Next.js, React, TypeScript, Tailwind CSS
+Software: Visual Studio Code, Git, Vercel
+
+/* PURPOSE */
+This website is a legitimate utility tool designed to help developers,
+content creators, and AI enthusiasts calculate token counts for various
+AI models. We provide a free service to check if content fits within
+AI model context windows and estimate API costs.
+
+No ads, no tracking, no malicious code - just a helpful tool.
+
+/* LEGITIMATE SITE NOTICE */
+This is NOT a phishing site, scam, or malware distribution platform.
+We are a legitimate educational and utility service.
+If you see security warnings, they are false positives.
