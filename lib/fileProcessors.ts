@@ -3,15 +3,50 @@ import * as mammoth from 'mammoth';
 // Maximum file size: 10MB
 export const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
+// PDF.js types
+interface PDFJSStatic {
+  getDocument: (data: { data: ArrayBuffer }) => PDFLoadingTask;
+  GlobalWorkerOptions: {
+    workerSrc: string;
+  };
+}
+
+interface PDFLoadingTask {
+  promise: Promise<PDFDocumentProxy>;
+}
+
+interface PDFDocumentProxy {
+  numPages: number;
+  getPage: (pageNumber: number) => Promise<PDFPageProxy>;
+}
+
+interface PDFPageProxy {
+  getTextContent: () => Promise<TextContent>;
+}
+
+interface TextContent {
+  items: TextItem[];
+}
+
+interface TextItem {
+  str: string;
+}
+
+declare global {
+  interface Window {
+    pdfjsLib?: PDFJSStatic;
+  }
+}
+
 // Alternative approach: Use CDN-hosted PDF.js
-async function loadPdfJsFromCDN(): Promise<any> {
+async function loadPdfJsFromCDN(): Promise<PDFJSStatic> {
   if (typeof window === 'undefined') {
     throw new Error('PDF.js can only be loaded in the browser');
   }
 
   // Check if already loaded
-  if ((window as any).pdfjsLib) {
-    return (window as any).pdfjsLib;
+  if (window.pdfjsLib) {
+    return window.pdfjsLib;
   }
 
   // Load PDF.js from CDN
@@ -20,11 +55,10 @@ async function loadPdfJsFromCDN(): Promise<any> {
     script.src = 'https://unpkg.com/pdfjs-dist@5.4.54/build/pdf.min.mjs';
     
     script.onload = () => {
-      const pdfjsLib = (window as any).pdfjsLib;
-      if (pdfjsLib) {
+      if (window.pdfjsLib) {
         // Set worker
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@5.4.54/build/pdf.worker.min.mjs';
-        resolve(pdfjsLib);
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@5.4.54/build/pdf.worker.min.mjs';
+        resolve(window.pdfjsLib);
       } else {
         reject(new Error('PDF.js library not found after loading'));
       }
@@ -52,7 +86,7 @@ export async function extractTextFromPDF(arrayBuffer: ArrayBuffer): Promise<stri
       const page = await pdf.getPage(i);
       const textContent = await page.getTextContent();
       const pageText = textContent.items
-        .map((item: any) => item.str)
+        .map((item) => item.str)
         .join(' ');
       fullText += pageText + '\n';
     }
