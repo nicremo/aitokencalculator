@@ -3,23 +3,39 @@ import * as mammoth from 'mammoth';
 // Maximum file size: 10MB
 export const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
-// Dynamically import pdfjs-dist to avoid SSR issues
-let pdfjsLib: any = null;
-let pdfjsLoadPromise: Promise<any> | null = null;
+// Type for PDF.js
+interface PDFJSLib {
+  getDocument: (data: { data: ArrayBuffer }) => { promise: Promise<PDFDocument> };
+  GlobalWorkerOptions: { workerSrc: string };
+  version: string;
+}
 
-async function loadPdfJs() {
+interface PDFDocument {
+  numPages: number;
+  getPage: (pageNum: number) => Promise<PDFPage>;
+}
+
+interface PDFPage {
+  getTextContent: () => Promise<{ items: Array<{ str: string }> }>;
+}
+
+// Dynamically import pdfjs-dist to avoid SSR issues
+let pdfjsLib: PDFJSLib | null = null;
+let pdfjsLoadPromise: Promise<PDFJSLib> | null = null;
+
+async function loadPdfJs(): Promise<PDFJSLib | null> {
   if (pdfjsLib) return pdfjsLib;
   
   if (!pdfjsLoadPromise && typeof window !== 'undefined') {
     pdfjsLoadPromise = import('pdfjs-dist').then((pdfjs) => {
-      pdfjsLib = pdfjs;
+      pdfjsLib = pdfjs as unknown as PDFJSLib;
       // Set worker for PDF.js
       pdfjsLib.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
       return pdfjsLib;
     });
   }
   
-  return pdfjsLoadPromise;
+  return pdfjsLoadPromise || null;
 }
 
 export async function extractTextFromPDF(arrayBuffer: ArrayBuffer): Promise<string> {
@@ -37,7 +53,7 @@ export async function extractTextFromPDF(arrayBuffer: ArrayBuffer): Promise<stri
       const page = await pdf.getPage(i);
       const textContent = await page.getTextContent();
       const pageText = textContent.items
-        .map((item: any) => item.str)
+        .map((item) => item.str)
         .join(' ');
       fullText += pageText + '\n';
     }

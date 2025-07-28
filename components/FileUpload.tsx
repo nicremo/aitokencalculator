@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 import { extractTextFromPDF, extractTextFromDOCX, fileToArrayBuffer, MAX_FILE_SIZE } from '@/lib/fileProcessors';
 
 interface FileUploadProps {
-  onFilesProcessed: (content: string, fileType: string) => void;
+  onFilesProcessed: (content: string) => void;
   onError: (error: string) => void;
 }
 
@@ -29,17 +29,17 @@ export function FileUpload({ onFilesProcessed, onError }: FileUploadProps) {
       if (fileType === 'txt' || fileType === 'md') {
         // Plain text files
         const text = await file.text();
-        onFilesProcessed(text, fileType);
+        onFilesProcessed(text);
       } else if (fileType === 'pdf') {
         // PDF files
         const arrayBuffer = await fileToArrayBuffer(file);
         const text = await extractTextFromPDF(arrayBuffer);
-        onFilesProcessed(text, fileType);
+        onFilesProcessed(text);
       } else if (fileType === 'docx') {
         // DOCX files
         const arrayBuffer = await fileToArrayBuffer(file);
         const text = await extractTextFromDOCX(arrayBuffer);
-        onFilesProcessed(text, fileType);
+        onFilesProcessed(text);
       } else if (['jpg', 'jpeg', 'png', 'webp'].includes(fileType)) {
         // Image files - still not supported for now
         onError(t('fileUpload.errors.imagesNotSupported'));
