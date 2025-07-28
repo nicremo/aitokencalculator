@@ -24,11 +24,10 @@
   "fileUpload": {
     "title": "Drop files here or click to upload",
     "subtitle": "Supports TXT, MD, PDF, DOCX and images",
-    "processing": "Processing...",
+    "processing": "Processing file...",
+    "dropHere": "Drop files here",
     "error": "Error processing file",
     "errors": {
-      "pdfNotSupported": "Error processing file: PDF not yet supported",
-      "docxNotSupported": "Error processing file: DOCX not yet supported",
       "imagesNotSupported": "Error processing file: Images not yet supported",
       "fileTypeNotSupported": "Error processing file: .{fileType} not supported",
       "processingError": "Error processing file: {error}"

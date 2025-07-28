@@ -57,7 +57,7 @@ export default function TokenCalculatorPage({}: Props) {
     }
   }, [inputText, activeModelIds]);
 
-  const handleFileProcessed = (content: string) => {
+  const handleFileProcessed = (content: string, fileType: string) => {
     setInputText(content);
     setActiveTab('text'); // Switch to text tab to show results
     setError('');
