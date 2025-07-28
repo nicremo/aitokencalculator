@@ -3,57 +3,56 @@ import * as mammoth from 'mammoth';
 // Maximum file size: 10MB
 export const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
-// Type for PDF.js
-interface PDFJSLib {
-  getDocument: (data: { data: ArrayBuffer }) => { promise: Promise<PDFDocument> };
-  GlobalWorkerOptions: { workerSrc: string };
-  version: string;
-}
-
-interface PDFDocument {
-  numPages: number;
-  getPage: (pageNum: number) => Promise<PDFPage>;
-}
-
-interface PDFPage {
-  getTextContent: () => Promise<{ items: Array<{ str: string }> }>;
-}
-
-// Dynamically import pdfjs-dist to avoid SSR issues
-let pdfjsLib: PDFJSLib | null = null;
-let pdfjsLoadPromise: Promise<PDFJSLib> | null = null;
-
-async function loadPdfJs(): Promise<PDFJSLib | null> {
-  if (pdfjsLib) return pdfjsLib;
-  
-  if (!pdfjsLoadPromise && typeof window !== 'undefined') {
-    pdfjsLoadPromise = import('pdfjs-dist').then((pdfjs) => {
-      pdfjsLib = pdfjs as unknown as PDFJSLib;
-      // Set worker for PDF.js
-      pdfjsLib.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
-      return pdfjsLib;
-    });
+// Alternative approach: Use CDN-hosted PDF.js
+async function loadPdfJsFromCDN(): Promise<any> {
+  if (typeof window === 'undefined') {
+    throw new Error('PDF.js can only be loaded in the browser');
   }
-  
-  return pdfjsLoadPromise || null;
+
+  // Check if already loaded
+  if ((window as any).pdfjsLib) {
+    return (window as any).pdfjsLib;
+  }
+
+  // Load PDF.js from CDN
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/pdfjs-dist@5.4.54/build/pdf.min.mjs';
+    
+    script.onload = () => {
+      const pdfjsLib = (window as any).pdfjsLib;
+      if (pdfjsLib) {
+        // Set worker
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@5.4.54/build/pdf.worker.min.mjs';
+        resolve(pdfjsLib);
+      } else {
+        reject(new Error('PDF.js library not found after loading'));
+      }
+    };
+    
+    script.onerror = () => {
+      reject(new Error('Failed to load PDF.js from CDN'));
+    };
+    
+    document.head.appendChild(script);
+  });
 }
 
 export async function extractTextFromPDF(arrayBuffer: ArrayBuffer): Promise<string> {
-  // Ensure PDF.js is loaded
-  const pdfjs = await loadPdfJs();
-  if (!pdfjs) {
-    throw new Error('PDF.js could not be loaded');
-  }
-
   try {
-    const pdf = await pdfjs.getDocument({ data: arrayBuffer }).promise;
+    // Load PDF.js from CDN
+    const pdfjsLib = await loadPdfJsFromCDN();
+    
+    // Load the PDF document
+    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+    const pdf = await loadingTask.promise;
     let fullText = '';
 
     for (let i = 1; i <= pdf.numPages; i++) {
       const page = await pdf.getPage(i);
       const textContent = await page.getTextContent();
       const pageText = textContent.items
-        .map((item) => item.str)
+        .map((item: any) => item.str)
         .join(' ');
       fullText += pageText + '\n';
     }
@@ -61,7 +60,10 @@ export async function extractTextFromPDF(arrayBuffer: ArrayBuffer): Promise<stri
     return fullText.trim();
   } catch (error) {
     console.error('Error extracting text from PDF:', error);
-    throw new Error('Failed to extract text from PDF');
+    if (error instanceof Error) {
+      throw new Error(`Failed to extract text from PDF: ${error.message}`);
+    }
+    throw new Error('Failed to extract text from PDF: Unknown error');
   }
 }
 
