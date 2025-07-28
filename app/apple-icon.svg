@@ -1,0 +1,12 @@
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="180" height="180" rx="36" fill="#1f2937"/>
+  
+  <!-- Token "T" shape -->
+  <path d="M45 40h90v22h-34v73h-22V62H45V40z" fill="#3b82f6"/>
+  
+  <!-- Token counter dots -->
+  <circle cx="135" cy="135" r="11" fill="#60a5fa"/>
+  <circle cx="135" cy="102" r="8.5" fill="#93c5fd"/>
+  <circle cx="135" cy="74" r="6" fill="#dbeafe"/>
+</svg>

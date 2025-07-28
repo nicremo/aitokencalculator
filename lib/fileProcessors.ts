@@ -1,18 +1,32 @@
 import * as mammoth from 'mammoth';
 
+// Maximum file size: 10MB
+export const MAX_FILE_SIZE = 10 * 1024 * 1024;
+
 // Dynamically import pdfjs-dist to avoid SSR issues
 let pdfjsLib: any = null;
-if (typeof window !== 'undefined') {
-  import('pdfjs-dist').then((pdfjs) => {
-    pdfjsLib = pdfjs;
-    // Set worker for PDF.js
-    pdfjsLib.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
-  });
+let pdfjsLoadPromise: Promise<any> | null = null;
+
+async function loadPdfJs() {
+  if (pdfjsLib) return pdfjsLib;
+  
+  if (!pdfjsLoadPromise && typeof window !== 'undefined') {
+    pdfjsLoadPromise = import('pdfjs-dist').then((pdfjs) => {
+      pdfjsLib = pdfjs;
+      // Set worker for PDF.js
+      pdfjsLib.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+      return pdfjsLib;
+    });
+  }
+  
+  return pdfjsLoadPromise;
 }
 
 export async function extractTextFromPDF(arrayBuffer: ArrayBuffer): Promise<string> {
-  if (!pdfjsLib) {
-    throw new Error('PDF.js is not loaded yet');
+  // Ensure PDF.js is loaded
+  const pdfjs = await loadPdfJs();
+  if (!pdfjs) {
+    throw new Error('PDF.js could not be loaded');
   }
 
   try {

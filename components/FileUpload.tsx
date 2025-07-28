@@ -5,7 +5,7 @@ import { useDropzone } from 'react-dropzone';
 import { Upload, FileText, Image, Music, Loader2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
-import { extractTextFromPDF, extractTextFromDOCX, fileToArrayBuffer } from '@/lib/fileProcessors';
+import { extractTextFromPDF, extractTextFromDOCX, fileToArrayBuffer, MAX_FILE_SIZE } from '@/lib/fileProcessors';
 
 interface FileUploadProps {
   onFilesProcessed: (content: string, fileType: string) => void;
@@ -22,6 +22,10 @@ export function FileUpload({ onFilesProcessed, onError }: FileUploadProps) {
     setProcessingFile(file.name);
     
     try {
+      // Check file size
+      if (file.size > MAX_FILE_SIZE) {
+        throw new Error(`File too large. Maximum size is ${MAX_FILE_SIZE / 1024 / 1024}MB`);
+      }
       if (fileType === 'txt' || fileType === 'md') {
         // Plain text files
         const text = await file.text();
