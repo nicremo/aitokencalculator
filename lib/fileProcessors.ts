@@ -46,7 +46,7 @@ export async function extractTextFromPDF(arrayBuffer: ArrayBuffer): Promise<stri
   }
 
   try {
-    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    const pdf = await pdfjs.getDocument({ data: arrayBuffer }).promise;
     let fullText = '';
 
     for (let i = 1; i <= pdf.numPages; i++) {
